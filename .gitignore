@@ -9,3 +9,4 @@ Documents - Shortcut.lnk
 *.duplicates_backup
 *.label_backup
 *.placeholder_backup
+data/apps_backup.csv
