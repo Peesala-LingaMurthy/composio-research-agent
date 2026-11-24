@@ -1,0 +1,6 @@
+openai==1.39.0
+tavily-python==0.1.9
+pydantic==1.10.27
+python-dotenv==1.2.4
+requests==2.34.2
+beautifulsoup4==4.15.0
