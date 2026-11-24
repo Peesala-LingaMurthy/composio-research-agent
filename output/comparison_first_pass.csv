@@ -1,0 +1,21 @@
+app_name,field,automated_prediction,manual_label,comparison
+HubSpot,API Availability,yes,yes,MATCH
+HubSpot,MCP Availability,documented,documented,MATCH
+Slack,MCP Availability,documented,documented,MATCH
+Gmail,MCP Availability,documented,documented,MATCH
+Google Calendar,MCP Availability,documented,documented,MATCH
+Notion,MCP Availability,documented,documented,MATCH
+GitHub,MCP Availability,documented,documented,MATCH
+Jira,MCP Availability,documented,documented,MATCH
+Salesforce,MCP Availability,documented,documented,MATCH
+Dropbox,MCP Availability,unknown,unknown,MATCH
+Google Drive,MCP Availability,documented,documented,MATCH
+Slack,API Availability,yes,yes,MATCH
+Gmail,API Availability,yes,yes,MATCH
+Google Calendar,API Availability,yes,yes,MATCH
+Notion,API Availability,yes,yes,MATCH
+GitHub,API Availability,yes,yes,MATCH
+Jira,API Availability,yes,yes,MATCH
+Salesforce,API Availability,yes,yes,MATCH
+Dropbox,API Availability,yes,yes,MATCH
+Google Drive,API Availability,yes,yes,MATCH

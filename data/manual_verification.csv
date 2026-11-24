@@ -1,0 +1,41 @@
+app_name,field,automated_result,manually_reviewed_result,verification_status,manual_label
+HubSpot,API Availability,Evidence found,Official HubSpot REST API and CRM API documentation located,Verified,Yes
+HubSpot,Authentication,OAuth 2.0 and Private App Access Tokens,Official HubSpot authentication documentation reviewed,Verified,OAuth 2.0; Private App Access Token
+HubSpot,MCP Availability,Official MCP documentation found,Official remote HubSpot MCP server documentation located,Documentation Reviewed,Yes
+Slack,MCP Availability,Official MCP documentation found,Official Slack MCP documentation located,Verified,Yes
+Gmail,MCP Availability,Official MCP documentation found,Official Gmail MCP server and configuration documentation located,Documentation Reviewed,Yes
+Google Calendar,MCP Availability,Official MCP documentation found,Official Google Calendar MCP server and reference located,Documentation Reviewed,Yes
+Notion,MCP Availability,Official MCP documentation found,Official remote Notion MCP server and setup documentation located,Documentation Reviewed,Yes
+GitHub,MCP Availability,Official MCP documentation found,Official GitHub MCP server and remote access documentation located,Documentation Reviewed,Yes
+Jira,MCP Availability,Official MCP documentation found,Atlassian Rovo MCP server documentation confirms Jira support,Documentation Reviewed,Yes
+Salesforce,MCP Availability,Official MCP documentation found,Official Salesforce Hosted MCP Servers documentation located,Documentation Reviewed,Yes
+Dropbox,MCP Availability,No MCP evidence found,No official MCP documentation found in collected research results,Further Research Required,Unknown; no evidence found in collected results
+Google Drive,MCP Availability,Official MCP documentation found,Google Workspace Drive MCP configuration documented,Documentation Reviewed,Yes
+Slack,API Availability,Evidence found,Official Slack Web API documentation located,Verified,Yes
+Slack,Authentication,OAuth 2.0,OAuth 2.0 authentication documented,Verified,OAuth 2.0
+Slack,Access Type,Self-serve evidence found,Basic developer sandbox available to developers,Verified,Self-serve developer sandbox
+Gmail,API Availability,Evidence found,Official Gmail REST API reference and overview located,Verified,Yes
+Gmail,Authentication,OAuth 2.0,Gmail API requires OAuth 2.0 credentials,Verified,OAuth 2.0
+Gmail,Access Type,Self-serve with OAuth verification requirements,OAuth setup documented; sensitive and restricted scopes require additional verification,Verified,Self-serve; additional verification for sensitive scopes
+Google Calendar,API Availability,Evidence found,Official Google Calendar REST API reference located,Verified,Yes
+Google Calendar,Authentication,OAuth 2.0,Official documentation describes OAuth 2.0 scopes and authorization,Verified,OAuth 2.0
+Google Calendar,Access Type,OAuth setup documented; quota increases may require approval,Basic access requirements need further review,Partially Verified,Further verification needed; quota increases may require approval
+Notion,API Availability,Evidence found,Official Notion REST API reference located,Verified,Yes
+Notion,Authentication,Bearer tokens; OAuth 2.0; internal connection tokens,Official authentication and authorization documentation reviewed,Verified,Bearer tokens; OAuth 2.0; internal connection tokens
+Notion,Access Type,Partially self-serve,PAT creation is restricted by default on Business and Enterprise plans,Partially Verified,Partially self-serve; workspace restrictions may apply
+GitHub,API Availability,Evidence found,Official GitHub REST API endpoint documentation located,Verified,Yes
+GitHub,Authentication,OAuth 2.0 and Personal Access Tokens,Official OAuth and REST API authentication documentation reviewed,Verified,OAuth 2.0; Personal Access Tokens
+GitHub,Access Type,Public API documentation; permissions vary by endpoint,Token scopes and endpoint-specific permissions require review,Partially Verified,Public API; endpoint permissions and token scopes apply
+Jira,API Availability,Evidence found,Official Jira Cloud REST API v3 documentation located,Verified,Yes
+Jira,Authentication,OAuth-based authentication,OAuth documentation found; exact Cloud authentication options need further review,Partially Verified,OAuth-based authentication
+Jira,Access Type,Existing Atlassian permissions apply,Exact plan and access requirements need further review,Partially Verified,Existing Atlassian permissions; plan requirements need review
+Salesforce,API Availability,Evidence found,Official Salesforce REST and SOAP API documentation located,Verified,Yes
+Salesforce,Authentication,OAuth 2.0,Official Salesforce OAuth documentation confirms access and refresh tokens,Verified,OAuth 2.0
+Salesforce,Access Type,Partially self-serve,Free Developer Edition available; hosted MCP activation and API permissions may require administrator configuration,Partially Verified,Partially self-serve; administrator configuration may apply
+HubSpot,Access Type,Distribution and installation limits vary by app type,Official app management documentation reviewed,Partially Verified,Distribution limits vary by app type
+Dropbox,API Availability,Evidence found,Official Dropbox API documentation confirms file and team endpoints,Verified,Yes
+Dropbox,Authentication,OAuth 2.0,Official Dropbox OAuth guide documents app registration and OAuth authentication,Verified,OAuth 2.0
+Dropbox,Access Type,Self-serve evidence found,Developers can register apps; team scopes may require team-admin permissions,Partially Verified,Self-serve app registration; team-admin permissions may apply
+Google Drive,API Availability,Evidence found,Official Google Drive REST API v3 documentation located,Verified,Yes
+Google Drive,Authentication,OAuth 2.0,Official Google OAuth 2.0 documentation reviewed,Verified,OAuth 2.0
+Google Drive,Access Type,OAuth and API usage policies apply,Drive OAuth scopes and user data policies reviewed,Partially Verified,OAuth scopes and user-data policies apply
