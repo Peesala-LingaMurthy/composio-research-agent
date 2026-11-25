@@ -1,11 +1,101 @@
 app_name,category
 Slack,Communication
-Gmail,Communication
-Google Calendar,Productivity
+Microsoft Teams,Communication
+Discord,Communication
+Zoom,Communication
+Telegram,Communication
+Twilio,Communication
+SendGrid,Communication
+Intercom,Communication
+WhatsApp Business,Communication
+Google Chat,Communication
 Notion,Productivity
+Google Calendar,Productivity
+Google Sheets,Productivity
+Google Docs,Productivity
+Airtable,Productivity
+Todoist,Productivity
+Asana,Productivity
+Trello,Productivity
+Monday.com,Productivity
+ClickUp,Productivity
 GitHub,Developer Tools
+GitLab,Developer Tools
+Bitbucket,Developer Tools
+Jenkins,Developer Tools
+Docker Hub,Developer Tools
+Sentry,Developer Tools
+Datadog,Developer Tools
+Postman,Developer Tools
+Vercel,Developer Tools
+Cloudflare,Developer Tools
 Jira,Project Management
+Linear,Project Management
+Wrike,Project Management
+Basecamp,Project Management
+Smartsheet,Project Management
+Teamwork,Project Management
+Shortcut,Project Management
+YouTrack,Project Management
+Miro,Project Management
+Aha!,Project Management
 Salesforce,CRM
 HubSpot,CRM
-Dropbox,Storage
+Zoho CRM,CRM
+Pipedrive,CRM
+Freshsales,CRM
+Microsoft Dynamics 365,CRM
+Copper,CRM
+Close,CRM
+Insightly,CRM
+Nimble,CRM
 Google Drive,Storage
+Dropbox,Storage
+Box,Storage
+OneDrive,Storage
+Amazon S3,Storage
+Cloudinary,Storage
+Egnyte,Storage
+Backblaze B2,Storage
+Wasabi,Storage
+pCloud,Storage
+Stripe,Finance
+PayPal,Finance
+Square,Finance
+Razorpay,Finance
+Plaid,Finance
+QuickBooks,Finance
+Xero,Finance
+FreshBooks,Finance
+Chargebee,Finance
+Wise,Finance
+Mailchimp,Marketing
+Brevo,Marketing
+Klaviyo,Marketing
+ActiveCampaign,Marketing
+Marketo,Marketing
+Campaign Monitor,Marketing
+ConvertKit,Marketing
+Hootsuite,Marketing
+Buffer,Marketing
+Typeform,Marketing
+Zendesk,Customer Support
+Freshdesk,Customer Support
+Help Scout,Customer Support
+Gorgias,Customer Support
+Crisp,Customer Support
+Tawk.to,Customer Support
+Front,Customer Support
+Gladly,Customer Support
+Kustomer,Customer Support
+Zoho Desk,Customer Support
+Shopify,E-commerce
+WooCommerce,E-commerce
+BigCommerce,E-commerce
+Magento,E-commerce
+Wix, E-commerce
+Squarespace,E-commerce
+Etsy,E-commerce
+eBay,E-commerce
+Amazon Selling Partner API,E-commerce
+ShipStation,E-commerce

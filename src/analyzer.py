@@ -1,138 +1,273 @@
 
-def analyze_app(app_name, category, search_results):
+import re
+from urllib.parse import urlparse
 
+
+def find_matches(text, indicators):
+    return [phrase for phrase in indicators if phrase in text]
+
+
+def classify_access_type(access_results):
     combined_text = " ".join(
         (
-            item.get("title", "") + " " +
-            item.get("url", "") + " " +
-            item.get("content", "")
-        )
-        for item in search_results
-    ).lower()
-
-    # 1. Authentication detection
-    auth_methods = []
-
-    if "oauth" in combined_text:
-        auth_methods.append("OAuth 2.0")
-
-    if "personal access token" in combined_text:
-        auth_methods.append("Personal Access Token")
-
-    if (
-        "private app" in combined_text
-        and "access token" in combined_text
-    ):
-        auth_methods.append("Private App Access Token")
-
-    if "bearer token" in combined_text:
-        auth_methods.append("Bearer Token")
-
-    auth_methods = list(dict.fromkeys(auth_methods))
-
-    if not auth_methods:
-        auth_methods = ["Needs manual verification"]
-
-    # 2. API evidence
-    api_indicators = [
-        "/api/",
-        "rest api",
-        "api reference",
-        "api endpoint",
-        "api documentation"
-    ]
-
-    api_available = "Not confirmed"
-
-    if any(word in combined_text for word in api_indicators):
-        api_available = "Documentation evidence found - verify manually"
-
-    # 3. MCP evidence
-    mcp_indicators = [
-        "model context protocol",
-        "mcp server",
-        "mcp integration"
-    ]
-
-    mcp_available = "No MCP evidence found in collected results"
-
-    if any(word in combined_text for word in mcp_indicators):
-        mcp_available = "MCP documentation evidence found - verify manually"
-
-    # 4. Access requirements
-    access_details = {
-        "Gmail": (
-            "Self-serve OAuth setup; sensitive scopes require verification"
-        ),
-        "Slack": (
-            "Developer sandbox available; verify feature restrictions"
-        ),
-        "HubSpot": (
-            "Access and distribution limits vary by app type"
-        ),
-        "Notion": (
-            "Workspace and plan restrictions may apply"
-        ),
-        "GitHub": (
-            "Public API; endpoint permissions and token scopes apply"
-        ),
-        "Dropbox": (
-            "Self-serve app registration; team permissions may apply"
-        ),
-        "Google Calendar": (
-            "OAuth setup; quota increase approval may be required"
-        ),
-        "Google Drive": (
-            "OAuth scopes and user-data policies apply"
-        ),
-        "Jira": (
-            "Atlassian permissions and plan requirements need review"
-        ),
-        "Salesforce": (
-            "Administrator configuration and API permissions may apply"
-        )
-    }
-
-    access_type = access_details.get(
-        app_name,
-        "Needs manual verification"
+            str(item.get("title", "")) + " " +
+            str(item.get("content", ""))
+        ).lower()
+        for item in access_results
     )
 
-    # 5. Buildability assessment
-    if (
-        api_available.startswith("Documentation evidence")
-        and auth_methods != ["Needs manual verification"]
-    ):
+    self_serve_indicators = [
+        "self-service", "self service", "self-serve", "self serve",
+        "register an oauth app", "creating an oauth app",
+        "registering a github app", "create an app",
+        "register an app", "developer portal",
+        "developer dashboard", "developer account",
+        "generate an api key", "create an api key",
+        "get an api key", "sign up for an account"
+    ]
 
-        buildability = "Potentially buildable - access testing required"
+    gated_indicators = [
+        "contact sales", "approval required",
+        "requires approval", "must be approved",
+        "subject to approval", "manual approval",
+        "manual review", "invite only", "invitation only",
+        "waitlist", "enterprise customers only",
+        "enterprise plan required"
+    ]
 
-        buildability_reason = (
-            "API and authentication documentation evidence was found. "
-            "Credentials, permissions, plan restrictions and live API "
-            "testing must be checked before confirming buildability."
+    self_matches = find_matches(combined_text, self_serve_indicators)
+    gated_matches = find_matches(combined_text, gated_indicators)
+
+    negative_phrases = [
+        "no approval required", "without approval",
+        "does not require approval",
+        "doesn't require approval"
+    ]
+
+    if any(p in combined_text for p in negative_phrases):
+        gated_matches = [
+            p for p in gated_matches if "approval" not in p
+        ]
+
+    if self_matches and gated_matches:
+        result = "Mixed"
+    elif self_matches:
+        result = "Self-serve"
+    elif gated_matches:
+        result = "Gated"
+    else:
+        result = "Unknown"
+
+    evidence = list(dict.fromkeys(self_matches + gated_matches))
+
+    reason = ", ".join(evidence) if evidence else "No strong access evidence found"
+
+    return result + " - " + reason
+
+
+def classify_mcp(app_name, mcp_results):
+    if not mcp_results:
+        return "Needs manual verification - no MCP evidence found"
+
+    app_terms = [
+        term for term in re.findall(r"[a-z0-9]+", app_name.lower())
+        if len(term) > 2
+    ]
+
+    official_domains = {
+        "slack": ["slack.dev"],
+        "gmail": ["developers.google.com"],
+        "google calendar": ["developers.google.com"],
+        "google drive": ["developers.google.com"],
+        "github": ["github.com"],
+        "notion": ["notion.com"],
+        "jira": ["atlassian.com"],
+        "salesforce": ["salesforce.com"],
+        "hubspot": ["hubspot.com"],
+        "dropbox": ["dropbox.com", "dropbox.dev"]
+    }
+
+    allowed_domains = official_domains.get(app_name.lower(), [])
+
+    provider_results = []
+
+    for item in mcp_results:
+        title = str(item.get("title", "")).lower()
+        url = str(item.get("url", ""))
+        content = str(item.get("content", "")).lower()
+
+        host = (urlparse(url).hostname or "").lower()
+
+        has_app_name = any(term in title + " " + url.lower() + " " + content
+                           for term in app_terms)
+
+        has_mcp = (
+            "mcp" in title
+            or "model context protocol" in title
+            or "mcp server" in content
         )
 
+        official = any(
+            host == domain or host.endswith("." + domain)
+            for domain in allowed_domains
+        )
+
+        if has_app_name and has_mcp:
+            provider_results.append((official, title))
+
+    if any(official for official, title in provider_results):
+        return (
+            "Provider MCP documentation found - "
+            "verify server setup and functionality"
+        )
+
+    if provider_results:
+        return (
+            "Provider-related MCP documentation found - "
+            "manual verification required"
+        )
+
+    return "Needs manual verification - no provider-specific MCP evidence found"
+
+
+def analyze_app(app_name, category, search_results):
+
+    evidence = {
+        "api": [],
+        "authentication": [],
+        "mcp": [],
+        "access requirements": []
+    }
+
+    for item in search_results:
+        search_type = str(item.get("search_type", "")).lower()
+
+        if search_type in evidence:
+            evidence[search_type].append(item)
+
+    api_text = " ".join(
+        (
+            str(item.get("title", "")) + " " +
+            str(item.get("url", "")) + " " +
+            str(item.get("content", ""))
+        ).lower()
+        for item in evidence["api"]
+    )
+
+    auth_text = " ".join(
+        (
+            str(item.get("title", "")) + " " +
+            str(item.get("url", "")) + " " +
+            str(item.get("content", ""))
+        ).lower()
+        for item in evidence["authentication"]
+    )
+
+    app = app_name.lower()
+    auth_methods = []
+
+    if app == "slack":
+        if "oauth" in auth_text:
+            auth_methods.append("OAuth 2.0")
+
+    elif app == "github":
+        if "oauth" in auth_text:
+            auth_methods.append("OAuth Apps")
+        if "github app" in auth_text:
+            auth_methods.append("GitHub Apps")
+        if "personal access token" in auth_text:
+            auth_methods.append("Personal Access Tokens")
+
+    elif app == "notion":
+        if "oauth" in auth_text:
+            auth_methods.append("OAuth 2.0")
+        if "personal access token" in auth_text:
+            auth_methods.append("Personal Access Tokens")
+        if "internal connection" in auth_text:
+            auth_methods.append("Internal Connection Tokens")
+        if "basic authentication" in auth_text:
+            auth_methods.append("Basic Auth for OAuth token exchange only")
+
+    elif app == "jira":
+        if "oauth 2.0" in auth_text or "3lo" in auth_text:
+            auth_methods.append("OAuth 2.0 (3LO)")
+        if "api token" in auth_text:
+            auth_methods.append("API Token with Basic Authentication")
+
     else:
+        if re.search(r"\boauth\b", auth_text):
+            auth_methods.append("OAuth 2.0 - verify exact flow")
 
+        # Do not classify Google API keys or HubSpot private
+        # app access tokens as generic API Key authentication.
+        if (
+            app not in ["google calendar", "gmail", "google drive", "hubspot"]
+            and re.search(r"\bapi keys?\b|\bsecret api key\b", auth_text)
+        ):
+            auth_methods.append("API Key")
+
+        if app == "hubspot" and "private app" in auth_text:
+            auth_methods.append("Private App Access Tokens")
+
+        if re.search(r"\bpersonal access tokens?\b", auth_text):
+            auth_methods.append("Personal Access Token")
+
+    authentication = (
+        ", ".join(dict.fromkeys(auth_methods))
+        if auth_methods else "Needs manual verification"
+    )
+
+    api_indicators = [
+        "api reference", "rest api", "graphql api",
+        "api endpoint", "api documentation", "api overview",
+        "rest resource", "service endpoint", "http request"
+    ]
+
+    api_available = (
+        "API documentation evidence found"
+        if any(term in api_text for term in api_indicators)
+        else "API not confirmed"
+    )
+
+    mcp_available = classify_mcp(
+        app_name, evidence["mcp"]
+    )
+
+    access_type = classify_access_type(
+        evidence["access requirements"]
+    )
+
+    if (
+        api_available.startswith("API documentation")
+        and authentication != "Needs manual verification"
+    ):
+        buildability = "Potentially buildable - access testing required"
+        reason = (
+            "API and authentication documentation evidence was found. "
+            "Credentials, permissions, plan restrictions and live API "
+            "testing are still required."
+        )
+    else:
         buildability = "Needs further investigation"
-
-        buildability_reason = (
+        reason = (
             "API or authentication evidence is incomplete. "
             "Review official documentation and access requirements."
         )
 
-    # 6. Return results
+    evidence_urls = list(dict.fromkeys(
+        item.get("url", "")
+        for item in search_results
+        if item.get("url", "")
+    ))
+
     return {
         "app_name": app_name,
         "category": category,
-        "authentication": ", ".join(auth_methods),
+        "authentication": authentication,
         "api_available": api_available,
         "mcp_available": mcp_available,
         "access_type": access_type,
         "buildability": buildability,
-        "buildability_reason": buildability_reason,
-        "evidence_urls": "; ".join(
-            item.get("url", "")
-            for item in search_results
-        )
+        "buildability_reason": reason,
+        "evidence_urls": "; ".join(evidence_urls)
     }

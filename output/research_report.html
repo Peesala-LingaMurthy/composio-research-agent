@@ -1,0 +1,702 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Composio App Research Report</title>
+<style>
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6fa;
+    color: #202938;
+    line-height: 1.6;
+}
+header {
+    background: #172554;
+    color: white;
+    padding: 38px 7%;
+}
+header h1 { margin: 0 0 8px; font-size: 30px; }
+header p { margin: 0; color: #dbeafe; }
+main { max-width: 1250px; margin: 30px auto; padding: 0 20px; }
+section {
+    background: white;
+    margin-bottom: 24px;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 9px #0000000c;
+}
+h2 { color: #172554; margin-top: 0; }
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 15px;
+    margin-bottom: 24px;
+}
+.metric {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 9px #0000000c;
+}
+.metric strong {
+    display: block;
+    font-size: 29px;
+    color: #1d4ed8;
+}
+.metric span { color: #526071; font-size: 14px; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; min-width: 850px; }
+th, td {
+    padding: 11px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+    vertical-align: top;
+    font-size: 13px;
+}
+th { background: #eff4ff; color: #172554; }
+tr:hover { background: #f8fafc; }
+.note {
+    background: #fff7ed;
+    border-left: 4px solid #ea580c;
+    padding: 14px;
+    border-radius: 5px;
+}
+ul { padding-left: 22px; }
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #64748b;
+}
+@media print {
+    body { background: white; }
+    section, .metric { box-shadow: none; border: 1px solid #ddd; }
+}
+</style>
+</head>
+
+<body>
+<header>
+    <h1>Composio App Research Agent</h1>
+    <p>Application API, Authentication, MCP and Integration Readiness Analysis</p>
+    <p>Research prototype | 10 applications | November 2026</p>
+</header>
+
+<main>
+
+<section>
+<h2>1. Project Overview</h2>
+<p>
+This Python research prototype evaluates application integration capabilities
+using collected developer documentation and rule-based analysis.
+It examines API availability, authentication methods, MCP documentation,
+access requirements and potential integration buildability.
+</p>
+<div class="note">
+<strong>Scope:</strong> This deliverable is a 10-application prototype,
+not the original 100-application target.
+</div>
+</section>
+
+<div class="metrics">
+    <div class="metric"><strong>10</strong><span>Applications assessed</span></div>
+    <div class="metric"><strong>10</strong><span>With API documentation evidence</span></div>
+    <div class="metric"><strong>9</strong><span>With MCP documentation evidence</span></div>
+    <div class="metric"><strong>10</strong><span>Potentially buildable</span></div>
+    <div class="metric"><strong>40</strong><span>Comparison records</span></div>
+</div>
+
+<section>
+<h2>2. Application Assessment</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Application</th><th>Category</th><th>Authentication</th>
+<th>API</th><th>MCP</th><th>Access type</th><th>Buildability</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+        <td><strong>Slack</strong></td>
+        <td>Communication</td>
+        <td>OAuth 2.0</td>
+        <td>API documentation evidence found</td>
+        <td>Provider MCP documentation found - verify server setup and functionality</td>
+        <td>Unknown - No strong access evidence found</td>
+        <td>Potentially buildable - access testing required</td>
+    </tr>
+
+    <tr>
+        <td><strong>Gmail</strong></td>
+        <td>Communication</td>
+        <td>OAuth 2.0 - verify exact flow</td>
+        <td>API documentation evidence found</td>
+        <td>Provider MCP documentation found - verify server setup and functionality</td>
+        <td>Unknown - No strong access evidence found</td>
+        <td>Potentially buildable - access testing required</td>
+    </tr>
+
+    <tr>
+        <td><strong>Google Calendar</strong></td>
+        <td>Productivity</td>
+        <td>OAuth 2.0 - verify exact flow</td>
+        <td>API documentation evidence found</td>
+        <td>Provider MCP documentation found - verify server setup and functionality</td>
+        <td>Unknown - No strong access evidence found</td>
+        <td>Potentially buildable - access testing required</td>
+    </tr>
+
+    <tr>
+        <td><strong>Notion</strong></td>
+        <td>Productivity</td>
+        <td>OAuth 2.0, Personal Access Tokens, Internal Connection Tokens, Basic Auth for OAuth token exchange only</td>
+        <td>API documentation evidence found</td>
+        <td>Provider MCP documentation found - verify server setup and functionality</td>
+        <td>Self-serve - developer portal</td>
+        <td>Potentially buildable - access testing required</td>
+    </tr>
+
+    <tr>
+        <td><strong>GitHub</strong></td>
+        <td>Developer Tools</td>
+        <td>OAuth Apps, GitHub Apps, Personal Access Tokens</td>
+        <td>API documentation evidence found</td>
+        <td>Provider MCP documentation found - verify server setup and functionality</td>
+        <td>Unknown - No strong access evidence found</td>
+        <td>Potentially buildable - access testing required</td>
+    </tr>
+
+    <tr>
+        <td><strong>Jira</strong></td>
+        <td>Project Management</td>
+        <td>OAuth 2.0 (3LO), API Token with Basic Authentication</td>
+        <td>API documentation evidence found</td>
+        <td>Provider MCP documentation found - verify server setup and functionality</td>
+        <td>Unknown - No strong access evidence found</td>
+        <td>Potentially buildable - access testing required</td>
+    </tr>
+
+    <tr>
+        <td><strong>Salesforce</strong></td>
+        <td>CRM</td>
+        <td>OAuth 2.0 - verify exact flow</td>
+        <td>API documentation evidence found</td>
+        <td>Provider MCP documentation found - verify server setup and functionality</td>
+        <td>Unknown - No strong access evidence found</td>
+        <td>Potentially buildable - access testing required</td>
+    </tr>
+
+    <tr>
+        <td><strong>HubSpot</strong></td>
+        <td>CRM</td>
+        <td>OAuth 2.0 - verify exact flow, Private App Access Tokens</td>
+        <td>API documentation evidence found</td>
+        <td>Provider MCP documentation found - verify server setup and functionality</td>
+        <td>Self-serve - developer account</td>
+        <td>Potentially buildable - access testing required</td>
+    </tr>
+
+    <tr>
+        <td><strong>Dropbox</strong></td>
+        <td>Storage</td>
+        <td>OAuth 2.0 - verify exact flow</td>
+        <td>API documentation evidence found</td>
+        <td>Needs manual verification - no MCP evidence found</td>
+        <td>Unknown - No strong access evidence found</td>
+        <td>Potentially buildable - access testing required</td>
+    </tr>
+
+    <tr>
+        <td><strong>Google Drive</strong></td>
+        <td>Storage</td>
+        <td>OAuth 2.0 - verify exact flow</td>
+        <td>API documentation evidence found</td>
+        <td>Provider MCP documentation found - verify server setup and functionality</td>
+        <td>Unknown - No strong access evidence found</td>
+        <td>Potentially buildable - access testing required</td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</section>
+
+<section>
+<h2>3. Access Classification Summary</h2>
+<ul>
+    <li><strong>Unknown - No strong access evidence found</strong>: 8</li>
+
+    <li><strong>Self-serve - developer portal</strong>: 1</li>
+
+    <li><strong>Self-serve - developer account</strong>: 1</li>
+    </ul>
+<p>
+Unknown access classifications indicate that the collected evidence
+was insufficient for a confident self-serve or gated determination.
+</p>
+</section>
+
+<section>
+<h2>4. Manual Verification Comparison</h2>
+<div class="metrics">
+    <div class="metric"><strong>24</strong><span>Comparable verified records</span></div>
+    <div class="metric"><strong>24</strong><span>Matching records</span></div>
+    <div class="metric"><strong>0</strong><span>Non-matching records</span></div>
+    <div class="metric"><strong>100.0%</strong><span>Agreement on scored records</span></div>
+    <div class="metric"><strong>16</strong><span>Records not scored</span></div>
+</div>
+
+<p>
+Comparison records by field:
+</p>
+<ul>
+    <li><strong>API Availability</strong>: 10 records</li>
+
+    <li><strong>Authentication</strong>: 10 records</li>
+
+    <li><strong>MCP Availability</strong>: 10 records</li>
+
+    <li><strong>Access Type</strong>: 10 records</li>
+    </ul>
+
+<div class="note">
+<strong>How to interpret the agreement:</strong>
+The agreement percentage applies only to comparable records scored by
+the comparison script under its normalization rules. It is not a general
+accuracy estimate of the research system. Unverified and non-comparable
+records are excluded. Access-type classifications are not scored.
+</div>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Application</th><th>Field</th><th>Automated result</th>
+<th>Manual reference</th><th>Verification</th><th>Comparison</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+        <td>HubSpot</td>
+        <td>API Availability</td>
+        <td>yes</td>
+        <td>Yes</td>
+        <td>verified</td>
+        <td>MATCH</td>
+    </tr>
+
+    <tr>
+        <td>HubSpot</td>
+        <td>Authentication</td>
+        <td>oauth; private app access token</td>
+        <td>OAuth 2.0; Private App Access Tokens</td>
+        <td>verified</td>
+        <td>MATCH</td>
+    </tr>
+
+    <tr>
+        <td>HubSpot</td>
+        <td>MCP Availability</td>
+        <td>documented</td>
+        <td>Yes</td>
+        <td>documentation reviewed</td>
+        <td>NOT SCORED - VERIFICATION INCOMPLETE</td>
+    </tr>
+
+    <tr>
+        <td>HubSpot</td>
+        <td>Access Type</td>
+        <td>not scored</td>
+        <td>Review</td>
+        <td>partially verified</td>
+        <td>NOT SCORED - ACCESS TYPE NEEDS MANUAL CLASSIFICATION</td>
+    </tr>
+
+    <tr>
+        <td>Slack</td>
+        <td>MCP Availability</td>
+        <td>documented</td>
+        <td>Yes</td>
+        <td>verified</td>
+        <td>MATCH</td>
+    </tr>
+
+    <tr>
+        <td>Slack</td>
+        <td>API Availability</td>
+        <td>yes</td>
+        <td>Yes</td>
+        <td>verified</td>
+        <td>MATCH</td>
+    </tr>
+
+    <tr>
+        <td>Slack</td>
+        <td>Authentication</td>
+        <td>oauth</td>
+        <td>OAuth 2.0</td>
+        <td>verified</td>
+        <td>MATCH</td>
+    </tr>
+
+    <tr>
+        <td>Slack</td>
+        <td>Access Type</td>
+        <td>not scored</td>
+        <td>Review</td>
+        <td>verified</td>
+        <td>NOT SCORED - ACCESS TYPE NEEDS MANUAL CLASSIFICATION</td>
+    </tr>
+
+    <tr>
+        <td>Gmail</td>
+        <td>MCP Availability</td>
+        <td>documented</td>
+        <td>Yes</td>
+        <td>documentation reviewed</td>
+        <td>NOT SCORED - VERIFICATION INCOMPLETE</td>
+    </tr>
+
+    <tr>
+        <td>Gmail</td>
+        <td>API Availability</td>
+        <td>yes</td>
+        <td>Yes</td>
+        <td>verified</td>
+        <td>MATCH</td>
+    </tr>
+
+    <tr>
+        <td>Gmail</td>
+        <td>Authentication</td>
+        <td>oauth</td>
+        <td>OAuth 2.0</td>
+        <td>verified</td>
+        <td>MATCH</td>
+    </tr>
+
+    <tr>
+        <td>Gmail</td>
+        <td>Access Type</td>
+        <td>not scored</td>
+        <td>Review</td>
+        <td>verified</td>
+        <td>NOT SCORED - ACCESS TYPE NEEDS MANUAL CLASSIFICATION</td>
+    </tr>
+
+    <tr>
+        <td>Google Calendar</td>
+        <td>MCP Availability</td>
+        <td>documented</td>
+        <td>Yes</td>
+        <td>documentation reviewed</td>
+        <td>NOT SCORED - VERIFICATION INCOMPLETE</td>
+    </tr>
+
+    <tr>
+        <td>Google Calendar</td>
+        <td>API Availability</td>
+        <td>yes</td>
+        <td>Yes</td>
+        <td>verified</td>
+        <td>MATCH</td>
+    </tr>
+
+    <tr>
+        <td>Google Calendar</td>
+        <td>Authentication</td>
+        <td>oauth</td>
+        <td>OAuth 2.0</td>
+        <td>verified</td>
+        <td>MATCH</td>
+    </tr>
+
+    <tr>
+        <td>Google Calendar</td>
+        <td>Access Type</td>
+        <td>not scored</td>
+        <td>Review</td>
+        <td>partially verified</td>
+        <td>NOT SCORED - ACCESS TYPE NEEDS MANUAL CLASSIFICATION</td>
+    </tr>
+
+    <tr>
+        <td>Notion</td>
+        <td>MCP Availability</td>
+        <td>documented</td>
+        <td>Yes</td>
+        <td>verified</td>
+        <td>MATCH</td>
+    </tr>
+
+    <tr>
+        <td>Notion</td>
+        <td>API Availability</td>
+        <td>yes</td>
+        <td>Yes</td>
+        <td>verified</td>
+        <td>MATCH</td>
+    </tr>
+
+    <tr>
+        <td>Notion</td>
+        <td>Authentication</td>
+        <td>internal connection token; oauth; personal access token</td>
+        <td>OAuth 2.0; Personal Access Tokens; Internal Connection Tokens</td>
+        <td>verified</td>
+        <td>MATCH</td>
+    </tr>
+
+    <tr>
+        <td>Notion</td>
+        <td>Access Type</td>
+        <td>not scored</td>
+        <td>Review</td>
+        <td>partially verified</td>
+        <td>NOT SCORED - ACCESS TYPE NEEDS MANUAL CLASSIFICATION</td>
+    </tr>
+
+    <tr>
+        <td>GitHub</td>
+        <td>MCP Availability</td>
+        <td>documented</td>
+        <td>Yes</td>
+        <td>verified</td>
+        <td>MATCH</td>
+    </tr>
+
+    <tr>
+        <td>GitHub</td>
+        <td>API Availability</td>
+        <td>yes</td>
+        <td>Yes</td>
+        <td>verified</td>
+        <td>MATCH</td>
+    </tr>
+
+    <tr>
+        <td>GitHub</td>
+        <td>Authentication</td>
+        <td>github app; oauth; personal access token</td>
+        <td>OAuth Apps; GitHub Apps; Personal Access Tokens</td>
+        <td>verified</td>
+        <td>MATCH</td>
+    </tr>
+
+    <tr>
+        <td>GitHub</td>
+        <td>Access Type</td>
+        <td>not scored</td>
+        <td>Review</td>
+        <td>partially verified</td>
+        <td>NOT SCORED - ACCESS TYPE NEEDS MANUAL CLASSIFICATION</td>
+    </tr>
+
+    <tr>
+        <td>Jira</td>
+        <td>MCP Availability</td>
+        <td>documented</td>
+        <td>Yes</td>
+        <td>verified</td>
+        <td>MATCH</td>
+    </tr>
+
+    <tr>
+        <td>Jira</td>
+        <td>API Availability</td>
+        <td>yes</td>
+        <td>Yes</td>
+        <td>verified</td>
+        <td>MATCH</td>
+    </tr>
+
+    <tr>
+        <td>Jira</td>
+        <td>Authentication</td>
+        <td>api token; basic authentication; oauth</td>
+        <td>OAuth 2.0 (3LO); API Token with Basic Authentication</td>
+        <td>partially verified</td>
+        <td>NOT SCORED - VERIFICATION INCOMPLETE</td>
+    </tr>
+
+    <tr>
+        <td>Jira</td>
+        <td>Access Type</td>
+        <td>not scored</td>
+        <td>Review</td>
+        <td>partially verified</td>
+        <td>NOT SCORED - ACCESS TYPE NEEDS MANUAL CLASSIFICATION</td>
+    </tr>
+
+    <tr>
+        <td>Salesforce</td>
+        <td>MCP Availability</td>
+        <td>documented</td>
+        <td>Yes</td>
+        <td>verified</td>
+        <td>MATCH</td>
+    </tr>
+
+    <tr>
+        <td>Salesforce</td>
+        <td>API Availability</td>
+        <td>yes</td>
+        <td>Yes</td>
+        <td>verified</td>
+        <td>MATCH</td>
+    </tr>
+
+    <tr>
+        <td>Salesforce</td>
+        <td>Authentication</td>
+        <td>oauth</td>
+        <td>OAuth 2.0</td>
+        <td>verified</td>
+        <td>MATCH</td>
+    </tr>
+
+    <tr>
+        <td>Salesforce</td>
+        <td>Access Type</td>
+        <td>not scored</td>
+        <td>Review</td>
+        <td>partially verified</td>
+        <td>NOT SCORED - ACCESS TYPE NEEDS MANUAL CLASSIFICATION</td>
+    </tr>
+
+    <tr>
+        <td>Dropbox</td>
+        <td>MCP Availability</td>
+        <td>unknown</td>
+        <td>Unknown; no evidence found in collected results</td>
+        <td>further research required</td>
+        <td>NOT SCORED - VERIFICATION INCOMPLETE</td>
+    </tr>
+
+    <tr>
+        <td>Dropbox</td>
+        <td>API Availability</td>
+        <td>yes</td>
+        <td>Yes</td>
+        <td>verified</td>
+        <td>MATCH</td>
+    </tr>
+
+    <tr>
+        <td>Dropbox</td>
+        <td>Authentication</td>
+        <td>oauth</td>
+        <td>OAuth 2.0</td>
+        <td>verified</td>
+        <td>MATCH</td>
+    </tr>
+
+    <tr>
+        <td>Dropbox</td>
+        <td>Access Type</td>
+        <td>not scored</td>
+        <td>Review</td>
+        <td>partially verified</td>
+        <td>NOT SCORED - ACCESS TYPE NEEDS MANUAL CLASSIFICATION</td>
+    </tr>
+
+    <tr>
+        <td>Google Drive</td>
+        <td>MCP Availability</td>
+        <td>documented</td>
+        <td>Yes</td>
+        <td>documentation reviewed</td>
+        <td>NOT SCORED - VERIFICATION INCOMPLETE</td>
+    </tr>
+
+    <tr>
+        <td>Google Drive</td>
+        <td>API Availability</td>
+        <td>yes</td>
+        <td>Yes</td>
+        <td>verified</td>
+        <td>MATCH</td>
+    </tr>
+
+    <tr>
+        <td>Google Drive</td>
+        <td>Authentication</td>
+        <td>oauth</td>
+        <td>OAuth 2.0</td>
+        <td>verified</td>
+        <td>MATCH</td>
+    </tr>
+
+    <tr>
+        <td>Google Drive</td>
+        <td>Access Type</td>
+        <td>not scored</td>
+        <td>Review</td>
+        <td>partially verified</td>
+        <td>NOT SCORED - ACCESS TYPE NEEDS MANUAL CLASSIFICATION</td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</section>
+
+<section>
+<h2>5. Methodology</h2>
+<ol>
+<li>Read application names and categories from the input CSV.</li>
+<li>Collect developer documentation and search-result evidence.</li>
+<li>Classify API, authentication, MCP and access-related information.</li>
+<li>Generate structured application assessments.</li>
+<li>Compare selected automated findings against manually reviewed records.</li>
+</ol>
+<p>
+Saved research records were reanalyzed using reconstructed evidence categories.
+These categories are heuristic assignments and do not represent independently
+verified research-query counts.
+</p>
+</section>
+
+<section>
+<h2>6. Limitations and Future Work</h2>
+<ul>
+<li>The current prototype covers 10 applications, not 100.</li>
+<li>Classification relies on keyword-based rules and requires human review.</li>
+<li>Documentation evidence does not prove successful live API integration.</li>
+<li>MCP documentation does not prove that an MCP server is operational.</li>
+<li>Some access requirements and MCP findings need further verification.</li>
+<li>The saved dataset was used for reanalysis after a Tavily usage-limit response.</li>
+<li>A complete Composio SDK integration and live MCP workflow have not been implemented.</li>
+</ul>
+<h3>Future improvements</h3>
+<ul>
+<li>Expand the dataset to 100 applications.</li>
+<li>Improve classification and evidence extraction.</li>
+<li>Perform more manual verification.</li>
+<li>Test authorized API authentication and live access.</li>
+<li>Validate MCP server functionality.</li>
+<li>Integrate Composio SDK capabilities and deploy a dashboard.</li>
+</ul>
+</section>
+
+<section>
+<h2>7. Technology Stack</h2>
+<p>
+Python, Tavily Search API, OpenAI Python package, Requests,
+BeautifulSoup, CSV, Git and GitHub.
+</p>
+<p>
+GitHub repository:
+<a href="https://github.com/Peesala-LingaMurthy/composio-research-agent">
+Composio App Research Agent
+</a>
+</p>
+</section>
+
+</main>
+<footer>
+Composio App Research Agent â€” Research Prototype
+</footer>
+</body>
+</html>

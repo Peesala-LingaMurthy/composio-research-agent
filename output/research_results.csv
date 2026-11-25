@@ -1,4 +1,4 @@
-app_name,category,title,url,content
+﻿app_name,category,title,url,content
 Slack,Communication,Slack Web API | Slack Developer Docs,https://docs.slack.dev/apis/web-api,"For example, to send the same request above to the `conversations.create` method with a JSON POST body, send something like this:
 
 ```
@@ -9,11 +9,11 @@ Note how we present the token with the string `Bearer`  pre-pended to it, indica
 POST /api/conversations.createContent-type: application/x-www-form-urlencodedtoken=[REDACTED]&name=something-urgent
 ```
 
-#### JSON-encoded bodies​
+#### JSON-encoded bodiesâ€‹
 
 For write methods that support JSON, you may alternatively send your HTTP POST data as `Content-type: application/json`.
 
-There are some ground rules: [...] ## Methods​
+There are some ground rules: [...] ## Methodsâ€‹
 
 With over 200 methods, surely there's one right for you. You can find them all in the reference, where you can filter by method family.
 
@@ -124,12 +124,12 @@ Slack apps can utilize a wide range of APIs and platform features to accomplish 
 
 The most visited reference pages are those for methods, events, and scopes. They're the foundation of all Slack apps.
 
-### Methods​"
+### Methodsâ€‹"
 Slack,Communication,Installing via OAuth authorization code flow | Slack Developer Docs,https://docs.slack.dev/authentication/installing-with-oauth,"Now, you just need to exchange the code for an access token. You'll do this by calling the `oauth.v2.access` method as follows:
 
 ```
 
-curl -F code=1234 -F client_id=3336676.569200954261 -F client_secret=ABCDEFGH 
+curl -F code=1234 -F client_id=3336676.569200954261 -F client_secret=ABCDEFGH
 
 ```
 
@@ -153,9 +153,9 @@ Once you complete your access call, Slack sends you an HTTP request response con
   + Comparing `oauth.v2.access` and `oauth.v2.user.access` endpoints
  Appending scopes
  Securing OAuth connections for enterprise customers
- More about tokens [...] ### Using tokens​
+ More about tokens [...] ### Using tokensâ€‹
 
-The best way to communicate your access tokens — also known as bearer tokens — to Slack is by presenting them in a request's `Authorization` HTTP header where the full value, including ""Bearer"", is case-sensitive. This approach is required when using `application/json` with a write method.
+The best way to communicate your access tokens â€” also known as bearer tokens â€” to Slack is by presenting them in a request's `Authorization` HTTP header where the full value, including ""Bearer"", is case-sensitive. This approach is required when using `application/json` with a write method.
 
 ```
 
@@ -164,7 +164,7 @@ GET /api/conversations.list?limit=50
 Authorization: Bearer [REDACTED]
 
 ```"
-Slack,Communication,Tokens & installation | Slack Developer Docs,https://docs.slack.dev/tools/python-slack-sdk/legacy/auth,"To configure your app for OAuth, you'll need a client ID, a client secret, and a set of one or more scopes that will be applied to the token once it is granted. The client ID and client secret are available from the app page. The scopes are determined by the functionality of the app — every method you wish to access has a corresponding scope, and your app will need to request that scope in order to be able to access the method. Review the full list of OAuth scopes.
+Slack,Communication,Tokens & installation | Slack Developer Docs,https://docs.slack.dev/tools/python-slack-sdk/legacy/auth,"To configure your app for OAuth, you'll need a client ID, a client secret, and a set of one or more scopes that will be applied to the token once it is granted. The client ID and client secret are available from the app page. The scopes are determined by the functionality of the app â€” every method you wish to access has a corresponding scope, and your app will need to request that scope in order to be able to access the method. Review the full list of OAuth scopes.
 
 `import os [...] # An empty string is a valid token for this request
 
@@ -215,7 +215,7 @@ print(response)
 # Save the bot token to an environmental variable or to your data store
 
 # for later use"
-Slack,Communication,Connecting an MCP server to the Slackbot MCP Client | Slack Developer Docs,https://docs.slack.dev/ai/slackbot-mcp-client,"### Using no auth​
+Slack,Communication,Connecting an MCP server to the Slackbot MCP Client | Slack Developer Docs,https://docs.slack.dev/ai/slackbot-mcp-client,"### Using no authâ€‹
 
 View the full examples: JavaScript | Python
 
@@ -230,33 +230,33 @@ In this example, the `/mcp` route verifies the Slack request signature before fo
 
 `loading...`
 
-#### Entry point​ [...] `slack external-auth add-secret`
+#### Entry pointâ€‹ [...] `slack external-auth add-secret`
 
 If your provider uses PKCE (`use_pkce: true`) and your provider key starts with `mcp_`, no client secret is required.
 
-## Implementing your MCP server​
+## Implementing your MCP serverâ€‹
 
 The deprecated standalone HTTP+SSE transport and stdio are not supported. SSE-formatted responses within Streamable HTTP are supported and expected.
 
 How you implement your MCP server will depend on the type of authentication your MCP server is using. [...] 1. Go to your app at api.slack.com/apps. If you don't already have one, create one by clicking
-   
+
    Create New App.
 2. In the left sidebar under
-   
+
    Features, click MCP Servers.
 3. Click the
-   
+
    Get Started button to open the MCP Server form.
 4. Fill in the following fields:
-   
+
    - Name: A display name for your MCP server.
    - URL: The HTTPS endpoint of your MCP server (e.g., `
    - Auth Type: Select your desired authentication."
 Slack,Communication,Announcing the Slack MCP server and Real-time Search API | Slack Developer Docs,https://docs.slack.dev/changelog/2026/02/17/slack-mcp,"The MCP server enables AI agents to interact with Slack content through tools designed for LLM-driven discovery, configuration, and execution. Unlike APIs, the MCP server is built specifically for LLM consumption with robust descriptions and examples that return natural language responses. Refer to our documentation to learn more about the Slack MCP server.
 
-## Real-time Search API​"
+## Real-time Search APIâ€‹"
 Slack,Communication,MCP overview | Slack Developer Docs,https://docs.slack.dev/ai/mcp-overview,"| Implementation | Client (developer) must read documentation and write code to invoke specific endpoints and process the output | Client (agent) can ask the server, ""What tools can you offer?"" at runtime. The server responds with machine-readable tool descriptions that match the token provided. The same input might result in different output across runs. |
-| Output | Machine readable (JSON) and entity IDs | Human readable (markdown) with hydrated names for entities | [...] ## MCP and Slack​
+| Output | Machine readable (JSON) and entity IDs | Human readable (markdown) with hydrated names for entities | [...] ## MCP and Slackâ€‹
 
 Slack offers two ways to work with MCP:
 
@@ -271,11 +271,11 @@ Slack developer sandboxes are enterprise-ready with the controls you need to:
  Empower teams to build without putting production at risk
  Scale access with streamlined management
 
-## Sandbox features​ [...] ### Are developer sandboxes available to developers without a paid plan?​
+## Sandbox featuresâ€‹ [...] ### Are developer sandboxes available to developers without a paid plan?â€‹
 
 Yes. All developers can provision basic sandboxes with no paid plan or payment method required.
 
-### How do Enterprise sandboxes work?​
+### How do Enterprise sandboxes work?â€‹
 
 If you belong to an Enterprise organization and your Org Admin has enabled Allow developer sandboxes > Require approval for sandbox provisioning within your organization's settings, you'll need to make a request before you can provision a sandbox."
 Slack,Communication,Admin resources | Slack Developer Docs,https://docs.slack.dev/admins,"Slack Developer Docs
@@ -287,9 +287,9 @@ Don't have a paid plan? Join the Developer Program and provision a fully-feature
 
 Managing Slack, more streamlined than ever. Use approval and provisioning APIs to help Slack Admins work more effectively. Secure your organization with auditing and session management APIs.
 
-## Guides for admins​
+## Guides for adminsâ€‹
 
-### Manage app approvals​"
+### Manage app approvalsâ€‹"
 Slack,Communication,Admin resources | Slack Developer Docs,http://docs.slack.dev/admins,"Slack Developer Docs
 Slack Developer Docs
 
@@ -299,9 +299,9 @@ Don't have a paid plan? Join the Developer Program and provision a fully-feature
 
 Managing Slack, more streamlined than ever. Use approval and provisioning APIs to help Slack Admins work more effectively. Secure your organization with auditing and session management APIs.
 
-## Guides for admins​
+## Guides for adminsâ€‹
 
-### Manage app approvals​"
+### Manage app approvalsâ€‹"
 Gmail,Communication,Gmail API | Google for Developers,https://developers.google.com/workspace/gmail/api/reference/rest,"Methods
 
  `get` `GET /gmail/v1/users/{userId}/messages/{messageId}/attachments/{id}`
@@ -357,7 +357,7 @@ Gets the current user's Gmail profile.
 `stop` `POST /gmail/v1/users/{userId}/stop`
 
 Turn off push notification delivery for the given user mailbox."
-Gmail,Communication,Gmail API overview  |  Google for Developers,https://developers.google.com/workspace/gmail/api/guides,"Google Workspace
+Gmail,Communication,Gmail API overview Â |Â  Google for Developers,https://developers.google.com/workspace/gmail/api/guides,"Google Workspace
 Google Workspace
 
 # Gmail API overview Stay organized with collections Save and categorize content based on your preferences.
@@ -432,7 +432,7 @@ If your app requires access to any other Google APIs, you can add those scopes a
 For more information about specific OAuth 2.0 scopes, see OAuth 2.0 Scopes for Google APIs.
 
 ## OAuth verification"
-Gmail,Communication,Implement server-side authorization  |  Gmail  |  Google for Developers,https://developers.google.com/workspace/gmail/api/auth/web-server,"Requests to the Gmail API must be authorized using OAuth 2.0 credentials.
+Gmail,Communication,Implement server-side authorization Â |Â  Gmail Â |Â  Google for Developers,https://developers.google.com/workspace/gmail/api/auth/web-server,"Requests to the Gmail API must be authorized using OAuth 2.0 credentials.
 Use a server-side flow when your application needs to access Google APIs on
 behalf of the user, for example when the user is offline. This approach
 requires passing a one-time authorization code from your client to your server.
@@ -463,7 +463,7 @@ it to make API requests.
 email_address = ''
 try:
 credentials = exchange_code(authorization_code)"
-Gmail,Communication,Using OAuth 2.0 to Access Google APIs  |  Authorization  |  Google for Developers,https://developers.google.com/identity/protocols/oauth2,"A service account's credentials, which you obtain from the
+Gmail,Communication,Using OAuth 2.0 to Access Google APIs Â |Â  Authorization Â |Â  Google for Developers,https://developers.google.com/identity/protocols/oauth2,"A service account's credentials, which you obtain from the
 Google API Console, include a generated email address that is unique,
 a client ID, and at least one public/private key pair. You use the client ID and one private
 key to create a signed JWT and construct an access-token request in the appropriate format.
@@ -484,7 +484,7 @@ All applications follow a basic pattern when accessing a Google API using OAuth 
 high level, you follow five steps:
 
 ### 1. Obtain OAuth 2.0 credentials from the Google API Console."
-Gmail,Communication,MCP Reference: gmailmcp.googleapis.com  |  Gmail  |  Google for Developers,https://developers.google.com/workspace/gmail/api/reference/mcp,"### Toolsets
+Gmail,Communication,MCP Reference: gmailmcp.googleapis.com Â |Â  Gmail Â |Â  Google for Developers,https://developers.google.com/workspace/gmail/api/reference/mcp,"### Toolsets
 
 The gmailmcp.googleapis.com MCP server has the following toolsets:
 
@@ -494,7 +494,7 @@ The gmailmcp.googleapis.com MCP server has the following toolsets:
 
 ### Get MCP tool specifications [...] The Gmail MCP API MCP server offers the following MCP toolset endpoints:
 
- 
+
 
 ## MCP Tools
 
@@ -503,7 +503,7 @@ An MCP tool is a function or executable capability that an MCP server exposes to
 ### Toolsets [...] This is an MCP server provided by Gmail API. The server provides tools for developers to build LLM applications on top of Gmail.
 
 A Model Context Protocol (MCP) server acts as a proxy between an external service that provides context, data, or capabilities to a Large Language Model (LLM) or AI application. MCP servers connect AI applications to external systems such as databases and web services, translating their responses into a format that the AI application can understand."
-Gmail,Communication,Configure the Gmail MCP server  |  Google for Developers,https://developers.google.com/workspace/gmail/api/guides/configure-mcp-server,"Server name: `gmail`
+Gmail,Communication,Configure the Gmail MCP server Â |Â  Google for Developers,https://developers.google.com/workspace/gmail/api/guides/configure-mcp-server,"Server name: `gmail`
  Server URL: `
  Transport: Streamable HTTP
  Authentication: The Gmail remote MCP server uses OAuth 2.0. When creating your OAuth 2.0 client, select Use this client for an AI-powered agent. For details, see Learn about authentication and authorization.
@@ -544,7 +544,7 @@ Enable the APIs in the Google Cloud console:
 Enable the APIs
 
 ### Enable the MCP services"
-Gmail,Communication,Configure the Google Workspace MCP servers  |  Google for Developers,https://developers.google.com/workspace/guides/configure-mcp-servers,"`mcpServers`
+Gmail,Communication,Configure the Google Workspace MCP servers Â |Â  Google for Developers,https://developers.google.com/workspace/guides/configure-mcp-servers,"`mcpServers`
 `mcp_config.json`
 `{
  ""mcpServers"": {
@@ -673,21 +673,21 @@ Google Calendar,Productivity,Events: list | Google Calendar | Google for Develop
 
 ### HTTP request
 
-`GET 
+`GET
 
 ### Parameters
 
 Parameter nameValueDescription
 
-Path parameters 
+Path parameters
 
-`calendarId` `string` Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the ""`primary`"" keyword. 
+`calendarId` `string` Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the ""`primary`"" keyword.
 
-Optional query parameters 
+Optional query parameters
 
 `alwaysIncludeEmail` `boolean` Deprecated and ignored. [...] `description` `string` Description of the calendar. Read-only.
 
-`updated` `datetime` Last modification time of the calendar (as a RFC3339 timestamp). Read-only. 
+`updated` `datetime` Last modification time of the calendar (as a RFC3339 timestamp). Read-only.
 
 `timeZone` `string` The time zone of the calendar. Read-only.
 
@@ -699,7 +699,7 @@ Required when adding a reminder.
 
 writable
 
-`nextPageToken` `string` Token used to access the next page of this result. Omitted if no further results are available, in which case `nextSyncToken` is provided. 
+`nextPageToken` `string` Token used to access the next page of this result. Omitted if no further results are available, in which case `nextSyncToken` is provided.
 
 `items[]` `list` List of events on the calendar."
 Google Calendar,Productivity,Google Calendar API overview | Google for Developers,https://developers.google.com/workspace/calendar/api/guides/overview,"The Google Calendar API is a RESTful API that can be accessed through explicit HTTP calls or using the Google Client Libraries. The API exposes most of the features available in the Google Calendar Web interface.
@@ -738,32 +738,32 @@ This example describes how to use the OAuth token provided by Application Defaul
 This document describes how to pass an OAuth token to the Map Management API call in your development environment. For instructions on using OAuth in a production environment, see Authentication at Google.
 
 ## Before you begin"
-Google Calendar,Productivity,Multi-user authentication workflow  |  Google Ads API  |  Google for Developers,https://developers.google.com/google-ads/api/docs/oauth/multi-user-authentication,"1. Direct users to the OAuth consent screen: Redirect each user to Google's OAuth 2.0 authorization endpoint requesting the ` scope and offline access.
+Google Calendar,Productivity,Multi-user authentication workflow Â |Â  Google Ads API Â |Â  Google for Developers,https://developers.google.com/google-ads/api/docs/oauth/multi-user-authentication,"1. Direct users to the OAuth consent screen: Redirect each user to Google's OAuth 2.0 authorization endpoint requesting the ` scope and offline access.
 2. Exchange the authorization code for tokens: After the user grants permission, capture the returned authorization code and exchange it for an access token and a refresh token. [...] ### curl
 
 Start by using an HTTP client to fetch an OAuth 2.0 access token. This guide uses the `curl` command.
 
 ```
- \   ""grant_type=refresh_token""  \   ""client_id=CLIENT_ID""  \   ""client_secret=CLIENT_SECRET""  \   ""refresh_token=REFRESH_TOKEN""  \  
+ \   ""grant_type=refresh_token""  \   ""client_id=CLIENT_ID""  \   ""client_secret=CLIENT_SECRET""  \   ""refresh_token=REFRESH_TOKEN""  \
 ```"
 Google Calendar,Productivity,Configure the Google Calendar MCP server | Google for Developers,https://developers.google.com/workspace/calendar/api/guides/configure-mcp-server,"- Server name: `calendar`
 - Server URL: `
 - Transport: Streamable HTTP
 - Authentication: The Calendar remote MCP server uses OAuth 2.0. When creating your OAuth 2.0 client, select Use this client for an AI-powered agent. For single-user personal setups, you can create a web, desktop, Android, or iOS client using Quick setup for personal use. For details, see Learn about authentication and authorization.
-  
+
   To avoid hourly sign-in prompts with a [...] 5. Select
-      
+
       Use this client for an AI-powered agent.
    6. Click
-      
+
       Create and copy your Client ID and Client Secret.
 2. Open or create the configuration file
-   
+
    `~/.gemini/config/mcp_config.json`.
 3. Add the
-   
+
    `mcpServers` configuration to `mcp_config.json`:`{ ""mcpServers"":{ ""calendar"":{ ""serverUrl"":"" ""oauth"":{ ""clientId"":""OAUTH_CLIENT_ID"", ""clientSecret"":""OAUTH_CLIENT_SECRET"" } } } }`
-   
+
    Replace the following: [...] To enable the MCP components for Calendar, enable the following service in your Google Cloud project:
 
 - Calendar MCP API
@@ -794,7 +794,7 @@ Curl Request [...] An MCP service endpoint is the network address and communicat
 
 The Calendar MCP API MCP server offers the following MCP toolset endpoints:
 
-- 
+-
 
 ## MCP Tools [...] This is an MCP server provided by Google Calendar API. The server provides tools for developers to build LLM applications on top of Calendar.
 
@@ -819,7 +819,7 @@ Once payment has been accepted you will receive an email confirmation, which com
 #### I would like to cancel my Device Access registration
 
 The US$5 registration fee is non-refundable."
-Google Calendar,Productivity,Device Access Registration  |  Google for Developers,https://developers.google.com/nest/device-access/registration,"Before creating your first project, you must register for Device Access. Registration consists of the acceptance of the Google API and Device Access Sandbox Terms of Service, along with a one-time, non-refundable fee (US$5) per account.
+Google Calendar,Productivity,Device Access Registration Â |Â  Google for Developers,https://developers.google.com/nest/device-access/registration,"Before creating your first project, you must register for Device Access. Registration consists of the acceptance of the Google API and Device Access Sandbox Terms of Service, along with a one-time, non-refundable fee (US$5) per account.
 
 You will not be able to create a project until you have accepted both Terms of Service and paid the registration fee. This applies to all users, both individual users and those looking to create a commercial offering. [...] Device Access requires registration, including accepting Google API and Device Access Sandbox Terms of Service, along with a non-refundable US$5 fee per account.
  Registration must be completed with a consumer Google Account (e.g., gmail.com) and the associated account cannot be changed later.
@@ -838,13 +838,13 @@ Notion,Productivity,Introduction - Notion Docs,https://developers.notion.com/ref
 | POST | Create a view query |
 | POST | Search |
 
-### ​ Responses
+### â€‹ Responses
 
-If an endpoint supports pagination, then the response object contains the below fields. [...] ## ​ Conventions
+If an endpoint supports pagination, then the response object contains the below fields. [...] ## â€‹ Conventions
 
 The base URL to send all API requests is ` HTTPS is required for all API requests. The Notion API follows RESTful conventions when possible, with most operations performed via `GET`, `POST`, `PATCH`, and `DELETE` requests on page and database resources. Request and response bodies are encoded as JSON.
 
-### ​ JSON conventions"
+### â€‹ JSON conventions"
 Notion,Productivity,Overview - Notion Docs,https://developers.notion.com/reference/post-database-query,"API"",""pages"":[{""title"":""Introduction"",""href"":""/reference/admin/intro""},{""title"":""Scopes"",""href"":""/reference/admin/scopes""},{""title"":""Versioning"",""href"":""/reference/admin/versioning""}]},{""group"":""Endpoints"",""pages"":[{""group"":""Legal holds"",""pages"":[{""openapi"":""openapi-adminApi.json GET /v1/legal\_holds"",""title"":""List legal holds"",""href"":""/reference/admin/list-legal-holds""},{""openapi"":""openapi-adminApi.json POST /v1/legal\_holds/{legal\_hold\_id}/users"",""title"":""Add users to a legal [...] /v1/comments/{comment\_id}"",""href"":""/reference/delete-a-comment""},{""openapi"":""get /v1/comments/{comment\_id}"",""title"":""Retrieve a comment"",""href"":""/reference/retrieve-comment""},{""openapi"":""get /v1/comments"",""title"":""List comments"",""href"":""/reference/list-comments""}]},{""group"":""Views"",""pages"":[{""openapi"":""post /v1/views"",""title"":""Create a view"",""href"":""/reference/create-view""},{""openapi"":""get /v1/views/{view\_id}"",""title"":""Retrieve a view"",""href"":""/reference/retrieve-a-view""},{""openapi"":""patch [...] /v1/oauth/token"",""href"":""/reference/create-a-token""},{""openapi"":""post /v1/oauth/introspect"",""title"":""Introspect a token"",""href"":""/reference/introspect-token""},{""openapi"":""post /v1/oauth/revoke"",""title"":""Revoke a token"",""href"":""/reference/revoke-token""},{""title"":""Refresh a token"",""openapi"":""post /v1/oauth/token"",""href"":""/reference/refresh-a-token""}]},{""group"":""Blocks"",""pages"":[{""openapi"":""patch /v1/blocks/{block\_id}/children"",""title"":""Append block"
 Notion,Productivity,Notion API quickstart,https://developers.notion.com/guides/notion-api/quick-start,"## API reference
 
@@ -854,11 +854,11 @@ Browse every endpoint, request parameter, and response field.
 
 Official client library for Node.js."
 Notion,Productivity,Authentication - Notion Docs,https://developers.notion.com/reference/authentication,"`Authorization` header to both authenticate and authorize operations. The Notion API accepts bearer tokens in this header. Bearer tokens are provided when you create an internal connection, create a personal access token, or complete the OAuth flow for a public connection. `Client` and the client can be used to send multiple authenticated requests."
-Notion,Productivity,Notion API authorization,https://developers.notion.com/guides/authorization/overview,"The connection needs to exchange the temporary `code` for an `access_token`. To set up this step, retrieve the `code` from the redirect URI. Next, send the `code` as part of a `POST` request to Notion’s token endpoint:  This endpoint is described in more detail in the API reference docs for creating a token. The request is authorized using HTTP Basic Authentication. The credential is a colon-delimited combination of the connection’s `CLIENT_ID` and `CLIENT_SECRET`, like so: `base64` encoded [...] ## What is authorization?
+Notion,Productivity,Notion API authorization,https://developers.notion.com/guides/authorization/overview,"The connection needs to exchange the temporary `code` for an `access_token`. To set up this step, retrieve the `code` from the redirect URI. Next, send the `code` as part of a `POST` request to Notionâ€™s token endpoint:  This endpoint is described in more detail in the API reference docs for creating a token. The request is authorized using HTTP Basic Authentication. The credential is a colon-delimited combination of the connectionâ€™s `CLIENT_ID` and `CLIENT_SECRET`, like so: `base64` encoded [...] ## What is authorization?
 
 Authorization is the process of granting a connection or token access to Notion data. Internal connections use a static credential called an internal connection API token, personal access tokens use a user-scoped static token, and OAuth integrations and public integrations use the OAuth 2.0 protocol.
 
-## Internal connection auth flow set-up [...] Personal access tokens (PATs) are created directly by a Notion user in the Developer portal. There is no OAuth flow and no page picker. A PAT acts as the user who created it and uses that user’s permissions in the selected workspace. Use a PAT when a script, CLI workflow, Worker, or trusted tool should act as you. Use an internal connection for team-owned workspace automations, or an OAuth integration when each user needs to authorize your app. PATs use the same`Authorization` header as other"
+## Internal connection auth flow set-up [...] Personal access tokens (PATs) are created directly by a Notion user in the Developer portal. There is no OAuth flow and no page picker. A PAT acts as the user who created it and uses that userâ€™s permissions in the selected workspace. Use a PAT when a script, CLI workflow, Worker, or trusted tool should act as you. Use an internal connection for team-owned workspace automations, or an OAuth integration when each user needs to authorize your app. PATs use the same`Authorization` header as other"
 Notion,Productivity,Notion MCP - Notion Docs,https://developers.notion.com/guides/mcp/overview,"Notion MCP lets an MCP client, such as Claude Code, Cursor, or Codex, connect to your Notion workspace through the Model Context Protocol (MCP).
 
 ## How Notion MCP works
@@ -867,7 +867,7 @@ Notion MCP is a remote MCP server hosted by Notion. After you authorize a connec
 
 An MCP client connects to Notion's remote MCP server, which uses the Notion API.
 
-## ​ What you can do [...] \_jsxs(\_Fragment,{children:[\_jsxs(\_components.p,{children:[`Notion MCP lets an `,\_jsx(\_components.a,{href:`/guides/mcp/common-mcp-clients`,children:`MCP client`}),`, such as Claude Code, Cursor, or Codex, connect to your Notion workspace through the `,\_jsx(\_components.a,{href:` Context Protocol (MCP)`}),`.`]}),`\n`,\_jsx(Heading,{level:`2`,id:`how-notion-mcp-works`,children:`How Notion MCP works`}),`\n`,\_jsx(\_components.p,{children:`Notion MCP is a remote MCP server hosted by Notion. [...] MCP clients can combine Notion MCP tools to:
+## â€‹ What you can do [...] \_jsxs(\_Fragment,{children:[\_jsxs(\_components.p,{children:[`Notion MCP lets an `,\_jsx(\_components.a,{href:`/guides/mcp/common-mcp-clients`,children:`MCP client`}),`, such as Claude Code, Cursor, or Codex, connect to your Notion workspace through the `,\_jsx(\_components.a,{href:` Context Protocol (MCP)`}),`.`]}),`\n`,\_jsx(Heading,{level:`2`,id:`how-notion-mcp-works`,children:`How Notion MCP works`}),`\n`,\_jsx(\_components.p,{children:`Notion MCP is a remote MCP server hosted by Notion. [...] MCP clients can combine Notion MCP tools to:
 
  Search content in Notion and connected sources.
  Read, create, and update Notion content.
@@ -875,7 +875,7 @@ An MCP client connects to Notion's remote MCP server, which uses the Notion API.
 
 See Supported tools for the current tool list, or connect an MCP client.
 
-## ​ Admin controls"
+## â€‹ Admin controls"
 Notion,Productivity,Connect Notion to your AI assistant with MCP,https://developers.notion.com/guides/mcp/get-started-with-mcp,"Visual Studio Code supports MCP servers in its agent customization experience. See the VS Code MCP documentation for more details.
 
 1
@@ -894,7 +894,7 @@ Open the Command Palette (`Cmd+Shift+P` / `Ctrl+Shift+P`) and run MCP: List Serv
 
 Start the Notion server and complete the OAuth flow when prompted
 
-User-level configuration [...] ### ​ Hermes
+User-level configuration [...] ### â€‹ Hermes
 
 Hermes is a coding agent from Nous Research that can be extended with MCP servers. See the Hermes MCP documentation for more details.
 
@@ -916,11 +916,11 @@ hermes mcp login notion hermes  mcp  login  notion
 
 Complete the OAuth flow to connect your Notion workspace.
 
-Global configuration [...] In Notion, open Settings → Notion MCP and browse the directory. Select your AI assistant and follow its connection instructions.
+Global configuration [...] In Notion, open Settings â†’ Notion MCP and browse the directory. Select your AI assistant and follow its connection instructions.
 
-## ​ Manual setup
+## â€‹ Manual setup
 
-Use these instructions if you’re adding Notion as a custom MCP server or configuring a client directly. The remote server URL is `
+Use these instructions if youâ€™re adding Notion as a custom MCP server or configuring a client directly. The remote server URL is `
 
 ## Codex
 
@@ -942,39 +942,39 @@ Use these instructions if you’re adding Notion as a custom MCP server or confi
 
 ## Other MCP clients
 
-### ​ Codex (ChatGPT)"
+### â€‹ Codex (ChatGPT)"
 Notion,Productivity,Build an MCP client that connects to Notion,https://developers.notion.com/guides/mcp/build-mcp-client,"Build an MCP client that connects to Notion MCP using OAuth 2.0 with PKCE.
 
-## ​ Connection requirements
+## â€‹ Connection requirements
 
 Notion provides a hosted MCP (Model Context Protocol) server that lets MCP clients work with Notion workspaces. The server is available at:
 
 | Transport | URL | Notes |
- --- 
+ ---
 | Streamable HTTP (recommended) | ` | Recommended for new clients |
-| Server-Sent Events (SSE) | ` | For clients that don’t support Streamable HTTP | [...] ### ​ Publishing your own `mcp.json`
+| Server-Sent Events (SSE) | ` | For clients that donâ€™t support Streamable HTTP | [...] ### â€‹ Publishing your own `mcp.json`
 
 If you operate an MCP server, you can publish a `mcp.json` file at `/.well-known/mcp.json` on your domain so that MCP clients can discover your server automatically.
 
-## ​ Additional resources
+## â€‹ Additional resources
 
  Notion MCP Server GitHub
  MCP SDK Documentation
- MCP Registry — Anthropic’s MCP server registry [...] ### ​ Schema
+ MCP Registry â€” Anthropicâ€™s MCP server registry [...] ### â€‹ Schema
 
 | Field | Type | Description |
- --- 
+ ---
 | `name` | `string` | Human-readable name of the MCP server |
 | `description` | `string` | Brief description of what the server provides |
-| `icon` | `string` (URL) | URL to the server’s icon |
+| `icon` | `string` (URL) | URL to the serverâ€™s icon |
 | `endpoint` | `string` (URL) | The MCP server endpoint URL |
 
-### ​ How to use this in your client
+### â€‹ How to use this in your client
 
 When a user pastes a URL (e.g., ` your client can check for `/.well-known/mcp.json` on that domain. If the file exists, your client can:"
-Notion,Productivity,Notion API quickstart,https://developers.notion.com?amp=&amp=&amp=,"Don’t see the option to create a token?On Business and Enterprise plans, PAT creation is restricted by default. Ask a workspace owner to enable it in
+Notion,Productivity,Notion API quickstart,https://developers.notion.com?amp=&amp=&amp=,"Donâ€™t see the option to create a token?On Business and Enterprise plans, PAT creation is restricted by default. Ask a workspace owner to enable it in
 
-Settings → Connections.See Who can create PATs.
+Settings â†’ Connections.See Who can create PATs.
 
 ## Step 2: Create a page [...] ## Step 1: Get a personal access token
 
@@ -998,7 +998,7 @@ Notion APIcapability, and then selectCreate token. If a workspace picker appears
 
 4
 
-Copy the token and save it somewhere secure. You won’t be able to see it again."
+Copy the token and save it somewhere secure. You wonâ€™t be able to see it again."
 GitHub,Developer Tools,REST API endpoints for repositories - GitHub Docs,https://docs.github.com/en/rest/repos/repos,""" ""issues_url"": "" ""keys_url"": "" ""labels_url"": "" ""languages_url"": "" ""merges_url"": "" ""milestones_url"": "" ""notifications_url"": "" ""pulls_url"": "" ""releases_url"": "" ""ssh_url"": ""git@github.com:octocat/Hello-World.git"", ""stargazers_url"": "" ""statuses_url"": "" ""subscribers_url"": "" ""subscription_url"": "" ""tags_url"": "" ""teams_url"": "" ""trees_url"": "" ""hooks_url"": "" } ]` [...] "" ""commits_url"": "" ""compare_url"": "" ""contents_url"": "" ""contributors_url"": "" ""deployments_url"": "" ""downloads_url"": "" ""events_url"": "" ""forks_url"": "" ""git_commits_url"": "" ""git_refs_url"": "" ""git_tags_url"": "" ""git_url"": ""git:github.com/octocat/Hello-World-Template.git"", ""issue_comment_url"": "" ""issue_events_url"": "" ""issues_url"": "" ""keys_url"": "" ""labels_url"": "" ""languages_url"": "" ""merges_url"": "" ""milestones_url"": "" ""notifications_url"": "" ""pulls_url"": "" ""releases_url"": "" ""ssh_url"": [...] "" ""commits_url"": "" ""compare_url"": "" ""contents_url"": "" ""contributors_url"": "" ""deployments_url"": "" ""downloads_url"": "" ""events_url"": "" ""forks_url"": "" ""git_commits_url"": "" ""git_refs_url"": "" ""git_tags_url"": "" ""git_url"": ""git:github.com/octocat/Hello-World-Template.git"", ""issue_comment_url"": "" ""issue_events_url"": "" ""issues_url"": "" ""keys_url"": "" ""labels_url"": "" ""languages_url"": "" ""merges_url"": "" ""milestones_url"": "" ""notifications_url"": "" ""pulls_url"": "" ""releases_url"": "" ""ssh_url"":"
 GitHub,Developer Tools,REST API endpoints for users - GitHub Docs,https://docs.github.com/en/rest/users/users,"| Status code | Description |
  --- |
@@ -1013,7 +1013,7 @@ get/user/{account\_id}
 
 Copy to clipboard curl request example
 
-`curl -L \ -H ""Accept: application/vnd.github+json"" \ -H ""X-GitHub-Api-Version: 2026-03-10"" \ 
+`curl -L \ -H ""Accept: application/vnd.github+json"" \ -H ""X-GitHub-Api-Version: 2026-03-10"" \
 
 Default response
 
@@ -1025,11 +1025,11 @@ get/users/{username}
 
 Copy to clipboard curl request example
 
-`curl -L \ -H ""Accept: application/vnd.github+json"" \ -H ""X-GitHub-Api-Version: 2026-03-10"" \ 
+`curl -L \ -H ""Accept: application/vnd.github+json"" \ -H ""X-GitHub-Api-Version: 2026-03-10"" \
 
 Default response
 
-`Status: 200` [...] `curl -L \ -H ""Accept: application/vnd.github+json"" \ -H ""Authorization: Bearer "" \ -H ""X-GitHub-Api-Version: 2026-03-10"" \ 
+`Status: 200` [...] `curl -L \ -H ""Accept: application/vnd.github+json"" \ -H ""Authorization: Bearer "" \ -H ""X-GitHub-Api-Version: 2026-03-10"" \
 
 Response
 
@@ -1041,7 +1041,7 @@ GitHub,Developer Tools,REST API endpoints for pull requests - GitHub Docs,https:
 GitHub,Developer Tools,Authorizing OAuth apps - GitHub Docs,https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps,"By default, the response takes the following form:
 
 ```
-access_token=gho_16C7e42F292c6912E7710c838347Ae178B4a &expires_in=28800 &refresh_token=ghr_1B4a2e77838347a7E420ce178F2E7c6912E169246c34E1ccbF66C46812d16D5B1A9Dc86A1498 &refresh_token_expires_in=15897600 &scope=repo%2Cgist &token_type=bearer 
+access_token=[REDACTED] &expires_in=28800 &refresh_token=[REDACTED] &refresh_token_expires_in=15897600 &scope=repo%2Cgist &token_type=bearer
 ```
 
 ### 3. Use the access token to access the API
@@ -1049,17 +1049,17 @@ access_token=gho_16C7e42F292c6912E7710c838347Ae178B4a &expires_in=28800 &refresh
 The access token allows you to make requests to the API on a behalf of a user.
 
 ```
-Authorization: Bearer OAUTH-TOKEN GET  
+Authorization: Bearer OAUTH-TOKEN GET
 ``` [...] By default, the response takes the following form:
 
 ```
-access_token=gho_16C7e42F292c6912E7710c838347Ae178B4a &expires_in=28800 &refresh_token=ghr_1B4a2e77838347a7E420ce178F2E7c6912E169246c34E1ccbF66C46812d16D5B1A9Dc86A1498 &refresh_token_expires_in=15897600 &scope=repo%2Cgist &token_type=bearer 
+access_token=[REDACTED] &expires_in=28800 &refresh_token=[REDACTED] &refresh_token_expires_in=15897600 &scope=repo%2Cgist &token_type=bearer
 ```
 
 The scopes on the new access token will match the scopes of the previous token. You cannot provide a `scope` parameter during token refresh in order to change the access of the resulting token. [...] For example, in curl you can set the Authorization header like this:
 
 ```
-curl -H ""Authorization: Bearer OAUTH-TOKEN""  
+curl -H ""Authorization: Bearer OAUTH-TOKEN""
 ```
 
 Every time you receive an access token, you should use the token to revalidate the user's identity. A user can change which account they are signed into when you send them to authorize your app, and you risk mixing user data if you do not validate the user's identity after every sign in.
@@ -1133,14 +1133,14 @@ GitHub,Developer Tools,Setting up the GitHub MCP Server - GitHub Docs,https://do
 ## About the GitHub MCP server
 
 The GitHub MCP server is a Model Context Protocol (MCP) server provided and maintained by GitHub. MCP allows you to integrate AI capabilities with other tools and services, enhancing your development experience by providing context-aware AI assistance. [...] 6. Click
-   
+
    Save. The configuration in the `mcp.json` file should look like this:
-   
+
    JSON
-   
+
    `{ ""servers"": { ""github"": { ""url"": "" } } } { ""servers"": { ""github"": { ""url"": "" } } }`
 7. In the
-   
+
    `mcp.json` file, click Auth from the CodeLens above the server to authenticate to the server. A pop-up will come up allowing you to authenticate with your GitHub account. [...] `{ ""servers"": { ""github"": { ""url"": "" ""requestInit"": { ""headers"": { ""Authorization"": ""Bearer YOUR_GITHUB_PAT"" } } } } }`
 
 ## Enterprise configuration
@@ -1164,7 +1164,7 @@ For more information on configuring MCP servers in Visual Studio, see Use MCP se
    JSON
 
    ```
-   { ""servers"": { ""github"": { ""url"": "" } } } 
+   { ""servers"": { ""github"": { ""url"": "" } } }
    ``` [...] You can use the following configurations as examples:
 
 ### Remote server configuration example with PAT
@@ -1172,7 +1172,7 @@ For more information on configuring MCP servers in Visual Studio, see Use MCP se
 JSON
 
 ```
-{ ""servers"": { ""github"": { ""url"": "" ""requestInit"": { ""headers"": { ""Authorization"": ""Bearer YOUR_PAT_HERE"" } } } } } 
+{ ""servers"": { ""github"": { ""url"": "" ""requestInit"": { ""headers"": { ""Authorization"": ""Bearer YOUR_PAT_HERE"" } } } } }
 ```
 
 ```
@@ -1279,7 +1279,7 @@ In the response you should see
 ```
 
 ```
-Access token is : QddAGsDSS0FkXCb1zRCCzzeShZRnUXYH 
+Access token is : QddAGsDSS0FkXCb1zRCCzzeShZRnUXYH
 ```
 
 ```
@@ -1310,7 +1310,7 @@ Your client will require the following information to be able to make authentica
 ```
 
 ```
-java -jar rest-oauth-client-1.0.one-jar.jar requestToken JIRA_BASE_URL 
+java -jar rest-oauth-client-1.0.one-jar.jar requestToken JIRA_BASE_URL
 ```
 
 ```
@@ -1324,7 +1324,7 @@ Replace JIRA\_BASE\_URL with the URL to your JIRA instance. After executing this
 ```
 
 ```
-Token is W9QuE8hba6laXm2RcPGANVusKHnXUJcx Token secret is rx4T2R3ax7an3H0vJLq9XB9DOP3aiNMl Retrieved request token. go to  
+Token is W9QuE8hba6laXm2RcPGANVusKHnXUJcx Token secret is rx4T2R3ax7an3H0vJLq9XB9DOP3aiNMl Retrieved request token. go to
 ```
 
 ```
@@ -1349,7 +1349,7 @@ Jira,Project Management,About the Atlassian A2A Gateway,https://developer.atlass
 Looking for tool-level MCP documentation? See the Atlassian Rovo MCP Server docs to connect AI clients to Jira, Confluence, Compass, Jira Service Management, Bitbucket, and Rovo using the Model Context Protocol.
 
 Rate this page: [...] | Aspect | MCP | A2A |
- --- 
+ ---
 | Protocol | Model Context Protocol | Agent2Agent (JSON-RPC 2.0) |
 | Domain | `mcp.atlassian.com` | `a2a.atlassian.com` |
 | Transport | Streamable HTTP (bidirectional) | HTTP POST, SSE streaming |
@@ -1372,8 +1372,8 @@ Jira,Project Management,The Jira Service Management REST API,https://developer.a
 Salesforce,CRM,Reference | REST API Developer Guide | Salesforce Developers,https://developer.salesforce.com/docs/platform/api-rest/guide/resources-list.html,"| Connect REST API | `/services/data/vXX.X/connect` Accesses features in the Connect REST API. See the Connect REST API Resources in the Connect REST API Developer Guide. |
 | Financial Services | `/services/data/vXX.X/connect/financialservices` Accesses Financial Services objects. See the Financial Services Cloud Developer Guide. |
 | Health Cloud | `/services/data/vXX.X/connect/health/care-services` Accesses Health Cloud objects. See the Health Cloud Developer Guide. | [...] | Recent List Views | `/services/data/vXX.X/sobjects/sObject/listviews/recent` Returns the list of recently used list views for the given object. |
-| sObject Quick Actions | `/services/data/vXX.X/sobjects/sObject/quickActions/` Access an object’s actions and the action details. |
-| sObject Get Updated | `/services/data/vXX.X/sobjects/sObject/updated/​​​?start=startDateAndTime&end=endDateAndTime` | [...] | Eclair(geodata) | `/services/data/vXX.X/eclair` Accesses geodata definitions. See Charts Geodata Resource in the Analytics REST API Developer Guide. |
+| sObject Quick Actions | `/services/data/vXX.X/sobjects/sObject/quickActions/` Access an objectâ€™s actions and the action details. |
+| sObject Get Updated | `/services/data/vXX.X/sobjects/sObject/updated/â€‹â€‹â€‹?start=startDateAndTime&end=endDateAndTime` | [...] | Eclair(geodata) | `/services/data/vXX.X/eclair` Accesses geodata definitions. See Charts Geodata Resource in the Analytics REST API Developer Guide. |
 | Email Connect | `/services/data/vXX.X/emailConnect` For internal use only. |
 | Platform Event Schema by Schema ID | `/services/data/vXX.X/event/eventSchema/schemaId` Gets the definition of a platform event in JSON format for a schema ID. This resource is available in REST API version 40.0 and later. |"
 Salesforce,CRM,REST Reference | Industries Common Resources | Industries Common Resources Developer Guide | Salesforce Developers,https://developer.salesforce.com/docs/atlas.en-us.industries_reference.meta/industries_reference/batch_management_apis_rest_references.htm,"# REST Reference
@@ -1383,11 +1383,11 @@ You can access Common Business APIs using REST endpoints. These REST APIs follow
 To understand the architecture, authentication, rate limits, and how the requests and responses work, see Connect REST API Developer Guide.
 
 - Resources
-  
-  Here’s a list of Common Business API resources.
+
+  Hereâ€™s a list of Common Business API resources.
 - Response Bodies
-  
-  Here’s a list of Common Business API response bodies.
+
+  Hereâ€™s a list of Common Business API response bodies.
 
 See Also"
 Salesforce,CRM,Query | Reference | REST API Developer Guide | Salesforce Developers,https://developer.salesforce.com/docs/platform/api-rest/guide/resources-query.html,"The response contains the total number of records returned by the Query request (`totalSize`), a boolean indicating whether there are no more results (`done`), the URI of the next set of records (`nextRecordsUrl`), and an array of query result records (`records`).
@@ -1409,13 +1409,13 @@ Parameters [...] Parameters
 Example Response Body"
 Salesforce,CRM,Set Up Authorization with OAuth 2.0 | Code Examples | Streaming API Developer Guide | Salesforce Developers,https://developer.salesforce.com/docs/platform/api-streaming/guide/code-sample-auth-oauth.html,"`client_id` (or `consumer key`) and `client_secret` (or `consumer secret`) are valid, Salesforce sends a callback to the URI specified in `redirect_uri` that contains a value for `access_token.`
 2. From your Java or other client application, make a request to the authentication URL that passes in
-   
+
    `grant_type`, `client_id`, `client_secret`, `username`, and `password`. For example: [...] - `redirect_uri` is the `Callback URL`. An additional value you must specify is: the `grant_type`. For OAuth 2.0 callbacks, the value is `authorization_code` as shown in the sample. For more information about these parameters, see Authorize Apps with OAuth in Salesforce Help.
-   
-   If the value of [...] The OAuth 2.0 specification uses “client” instead of “consumer.” Salesforce supports OAuth 2.0.
-   
+
+   If the value of [...] The OAuth 2.0 specification uses â€œclientâ€ instead of â€œconsumer.â€ Salesforce supports OAuth 2.0.
+
    The values here correspond to the following values in the sample code in the rest of this procedure:
-   
+
    - `client_id` is the `Consumer Key`
    - `client_secret` is the `Consumer Secret`"
 Salesforce,CRM,Authentication | Get Started | Account Engagement API | Salesforce Developers,https://developer.salesforce.com/docs/marketing/pardot/guide/authentication.html,"| Parameter | Required | Description |
@@ -1425,7 +1425,7 @@ Salesforce,CRM,Authentication | Get Started | Account Engagement API | Salesforc
 
 If a valid access token is provided with a valid business unit ID, the Account Engagement endpoint works as expected.
 
-Note: The Account Engagement API doesn’t enforce IP address restrictions that are configured using the Salesforce option “Enforce login IP ranges on every request”. [...] There are numerous OAuth 2.0 Flow types supported. The Web Server Flow is the most commonly used. For a list of all flows, see the OAuth 2.0 Flows Help page. Read the descriptions of the flows to choose the best one for your case.
+Note: The Account Engagement API doesnâ€™t enforce IP address restrictions that are configured using the Salesforce option â€œEnforce login IP ranges on every requestâ€. [...] There are numerous OAuth 2.0 Flow types supported. The Web Server Flow is the most commonly used. For a list of all flows, see the OAuth 2.0 Flows Help page. Read the descriptions of the flows to choose the best one for your case.
 
 After you get the access token, you must pass it and the Account Engagement Business Unit ID using the `Authorization` and `Pardot-Business-Unit-Id` headers.
 
@@ -1433,7 +1433,7 @@ Request must be made using HTTPS. [...] # Authentication
 
 Prerequisites:
 
-1. You must have Salesforce OAuth set up in the org. To set up a connected app for OAuth, the “pardot\_api” scope must be one of the selected OAuth scopes. Otherwise, OAuth flows other than username/password flow can’t be used with the Account Engagement API. Check out this video for an example of how to implement OAuth.
+1. You must have Salesforce OAuth set up in the org. To set up a connected app for OAuth, the â€œpardot\_apiâ€ scope must be one of the selected OAuth scopes. Otherwise, OAuth flows other than username/password flow canâ€™t be used with the Account Engagement API. Check out this video for an example of how to implement OAuth.
 
 <!--THE END-->"
 Salesforce,CRM,OAuth and Connect REST API | Connect REST API Developer Guide | Connect REST API Developer Guide | Salesforce Developers,https://developer.salesforce.com/docs/platform/connect-rest-api/guide/intro_using_oauth.html,"A user must be authenticated before accessing Salesforce. OAuth has multiple authentication flows. There are several steps in each authentication flow, as dictated by the OAuth standard and the type of application trying to access Salesforce. On successful authorization, the client application receives access and refresh tokens.
@@ -1442,47 +1442,47 @@ For more information about setting up external client app OAuth flows, see Set U
 Salesforce,CRM,llms-hosted-mcp-servers.txt - Salesforce Developers,https://developer.salesforce.com/docs/llms-hosted-mcp-servers.txt,"\# Hosted Mcp Servers This file contains links to LLM-friendly markdown documentation pages. This file contains links to documentation sections following the llmstxt.org standard. ## Overview Documentation for Salesforce Hosted MCP Servers, covering how to connect AI agents and LLM applications to Salesforce data and automation using the Model Context Protocol (MCP), including authentication setup, supported client configurations, and available MCP tool references. ## Hosted MCP Servers Connect [...] MCP Servers Connect AI agents to Salesforce using the Model Context Protocol (MCP). Learn how to set up authentication, configure clients, and integrate with Salesforce data and automation. - \Activate MCP Servers - \Configure Agentforce Vibes - \Agentforce - \API Catalog - \Archive Connect - \Authentication Issues - \Best Practices - \Transition from Beta - \Configure ChatGPT - \Configure Claude - \Connect MCP Clients - \Server Connection Failures - \Contact Support - \Content Read-Only -"
 Salesforce,CRM,Salesforce Hosted MCP Servers Are Now Generally Available | Salesforce Developers Blog,https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available,"## Getting started
 
-The setup takes less than 30 minutes. Here’s the shortest path:
+The setup takes less than 30 minutes. Hereâ€™s the shortest path:
 
-1. Enable a server in Setup → API Catalog → MCP Servers
+1. Enable a server in Setup â†’ API Catalog â†’ MCP Servers
 2. Create an External Client App with `mcp_api` and `refresh_token` scopes
-3. Connect your client — Postman for testing, then Claude, ChatGPT, or similar for everyday use
+3. Connect your client â€” Postman for testing, then Claude, ChatGPT, or similar for everyday use
 
-Documentation is grouped into three layers to match the needs of various roles: [...] Salesforce Help — Admin setup and configuration
- Developer Docs — Technical reference, client setup, and troubleshooting
- Community Wiki — Patterns, tips, and the rationale behind our design decisions
+Documentation is grouped into three layers to match the needs of various roles: [...] Salesforce Help â€” Admin setup and configuration
+ Developer Docs â€” Technical reference, client setup, and troubleshooting
+ Community Wiki â€” Patterns, tips, and the rationale behind our design decisions
 
-If you’re not sure where to begin, try the platform/sobject-reads server in a sandbox. It’s read-only, risk-free, and immediately useful. When you’re ready for more, you can choose or build the exact tool set your organization needs.
+If youâ€™re not sure where to begin, try the platform/sobject-reads server in a sandbox. Itâ€™s read-only, risk-free, and immediately useful. When youâ€™re ready for more, you can choose or build the exact tool set your organization needs.
 
 ## A new chapter"
 Salesforce,CRM,MCP Servers | Toolkit | Agentforce Vibes Developer Guide | Salesforce Developers,https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-mcp-servers.html,"1. Click + Add Server in the MCP Servers panel.
-2. Select a Server Type from the dropdown (for example, “Salesforce Platform”).
-3. Enter a Name for the server (for example, “Prod Org MCP”).
+2. Select a Server Type from the dropdown (for example, â€œSalesforce Platformâ€).
+3. Enter a Name for the server (for example, â€œProd Org MCPâ€).
 4. Enter the URL for the server (for example, `
 5. Click Add Server.
 
-To configure the server using JSON directly, click Switch to JSON in the top-right corner of the Add MCP Server form. [...] Salesforce hosted MCP servers connect the agent to remote Salesforce capabilities without relying on local MCP services. They appear in the “Salesforce Platform” group alongside Salesforce DX.
+To configure the server using JSON directly, click Switch to JSON in the top-right corner of the Add MCP Server form. [...] Salesforce hosted MCP servers connect the agent to remote Salesforce capabilities without relying on local MCP services. They appear in the â€œSalesforce Platformâ€ group alongside Salesforce DX.
 
 Prerequisites: Your admin must enable hosted MCP servers in your org before they appear available. See Create an External Client App for admin setup instructions.
 
-Available hosted servers include: [...] Salesforce Platform—servers that connect to your Salesforce orgs (Salesforce DX, Salesforce API Context).
- Local Process—servers that run locally on your machine (GitHub, custom servers).
+Available hosted servers include: [...] Salesforce Platformâ€”servers that connect to your Salesforce orgs (Salesforce DX, Salesforce API Context).
+ Local Processâ€”servers that run locally on your machine (GitHub, custom servers).
 
 Each server displays its current state:
 
- Connected (green)—server is functioning and shows the number of available tools.
- Error (red)—connection failed. The panel displays the error message (for example, “Authentication failed (HTTP 401). Try reconnecting your org.”).
+ Connected (green)â€”server is functioning and shows the number of available tools.
+ Error (red)â€”connection failed. The panel displays the error message (for example, â€œAuthentication failed (HTTP 401). Try reconnecting your org.â€).
 
 To add a new MCP server:"
-Salesforce,CRM,Supported Salesforce Editions | Understanding Metadata API | Metadata API Developer Guide | Salesforce Developers,https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_editions.htm,"Alternatively, you can use a Developer Edition (DE) org. A DE org provides access to all features that are available with Enterprise Edition, but is limited by the number of users and the amount of storage space. A DE org isn’t a copy of your production org/ It provides an environment where you can build and test your solutions without affecting your organization’s data. Developer Edition accounts are available for free at ` [...] # Supported Salesforce Editions
+Salesforce,CRM,Supported Salesforce Editions | Understanding Metadata API | Metadata API Developer Guide | Salesforce Developers,https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_editions.htm,"Alternatively, you can use a Developer Edition (DE) org. A DE org provides access to all features that are available with Enterprise Edition, but is limited by the number of users and the amount of storage space. A DE org isnâ€™t a copy of your production org/ It provides an environment where you can build and test your solutions without affecting your organizationâ€™s data. Developer Edition accounts are available for free at ` [...] # Supported Salesforce Editions
 
-To use Metadata API, your organization must use Enterprise Edition, Unlimited Edition, Performance Edition, or Developer Edition. If you’re an existing Salesforce customer and want to upgrade to Enterprise, Unlimited, or Performance Edition, contact your account representative. [...] We strongly recommend that you use a sandbox, which is an exact replica of your production organization. Enterprise, Unlimited, and Performance Editions come with free developer sandboxes. For more information, see `"
-Salesforce,CRM,About SOAP API | SOAP API Developer Guide | Salesforce Developers,https://developer.salesforce.com/docs/platform/api/guide/sforce-api-quickstart-intro.html,"Developer Edition provides access to all features available with Enterprise Edition, but is constrained by the number of users and the amount of storage space in each org. Sign up for a free Developer Edition. Sandboxes create copies of your existing org into separate environments. For more information, see Sandboxes: Staging Environments for Customizing and Testing. A scratch org is a source-driven and disposable deployment that’s fully configurable, allowing you to emulate different [...] In all supported editions, a user must have the API Enabled permission turned on in the user profile they’re assigned. This permission is enabled by default on some profiles, including many profiles available in Developer Edition orgs. In supported editions, you can also use the Salesforce Integration user license to grant system-to-system integration users org access while limiting them to API-only operations. For more information, see Salesforce Help: Give Integration Users API Only Access. [...] For more information about Lightning Platform solutions and developer resources, go to Salesforce Developers.
+To use Metadata API, your organization must use Enterprise Edition, Unlimited Edition, Performance Edition, or Developer Edition. If youâ€™re an existing Salesforce customer and want to upgrade to Enterprise, Unlimited, or Performance Edition, contact your account representative. [...] We strongly recommend that you use a sandbox, which is an exact replica of your production organization. Enterprise, Unlimited, and Performance Editions come with free developer sandboxes. For more information, see `"
+Salesforce,CRM,About SOAP API | SOAP API Developer Guide | Salesforce Developers,https://developer.salesforce.com/docs/platform/api/guide/sforce-api-quickstart-intro.html,"Developer Edition provides access to all features available with Enterprise Edition, but is constrained by the number of users and the amount of storage space in each org. Sign up for a free Developer Edition. Sandboxes create copies of your existing org into separate environments. For more information, see Sandboxes: Staging Environments for Customizing and Testing. A scratch org is a source-driven and disposable deployment thatâ€™s fully configurable, allowing you to emulate different [...] In all supported editions, a user must have the API Enabled permission turned on in the user profile theyâ€™re assigned. This permission is enabled by default on some profiles, including many profiles available in Developer Edition orgs. In supported editions, you can also use the Salesforce Integration user license to grant system-to-system integration users org access while limiting them to API-only operations. For more information, see Salesforce Help: Give Integration Users API Only Access. [...] For more information about Lightning Platform solutions and developer resources, go to Salesforce Developers.
 
-To use SOAP API, your org must use Enterprise Edition, Performance Edition, Unlimited Edition, or Developer Edition. If you’re an existing Salesforce customer and want to upgrade to Enterprise, Unlimited, or Performance Edition, contact your account representative."
-Salesforce,CRM,About SOAP API | SOAP API Developer Guide | Salesforce Developers,https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_quickstart_intro.htm,"Developer Edition provides access to all features available with Enterprise Edition, but is constrained by the number of users and the amount of storage space in each org. Sign up for a free Developer Edition. Sandboxes create copies of your existing org into separate environments. For more information, see Sandboxes: Staging Environments for Customizing and Testing. A scratch org is a source-driven and disposable deployment that’s fully configurable, allowing you to emulate different [...] In all supported editions, a user must have the API Enabled permission turned on in the user profile they’re assigned. This permission is enabled by default on some profiles, including many profiles available in Developer Edition orgs. In supported editions, you can also use the Salesforce Integration user license to grant system-to-system integration users org access while limiting them to API-only operations. For more information, see Salesforce Help: Give Integration Users API Only Access. [...] For more information about Lightning Platform solutions and developer resources, go to Salesforce Developers.
+To use SOAP API, your org must use Enterprise Edition, Performance Edition, Unlimited Edition, or Developer Edition. If youâ€™re an existing Salesforce customer and want to upgrade to Enterprise, Unlimited, or Performance Edition, contact your account representative."
+Salesforce,CRM,About SOAP API | SOAP API Developer Guide | Salesforce Developers,https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_quickstart_intro.htm,"Developer Edition provides access to all features available with Enterprise Edition, but is constrained by the number of users and the amount of storage space in each org. Sign up for a free Developer Edition. Sandboxes create copies of your existing org into separate environments. For more information, see Sandboxes: Staging Environments for Customizing and Testing. A scratch org is a source-driven and disposable deployment thatâ€™s fully configurable, allowing you to emulate different [...] In all supported editions, a user must have the API Enabled permission turned on in the user profile theyâ€™re assigned. This permission is enabled by default on some profiles, including many profiles available in Developer Edition orgs. In supported editions, you can also use the Salesforce Integration user license to grant system-to-system integration users org access while limiting them to API-only operations. For more information, see Salesforce Help: Give Integration Users API Only Access. [...] For more information about Lightning Platform solutions and developer resources, go to Salesforce Developers.
 
-To use SOAP API, your org must use Enterprise Edition, Performance Edition, Unlimited Edition, or Developer Edition. If you’re an existing Salesforce customer and want to upgrade to Enterprise, Unlimited, or Performance Edition, contact your account representative."
+To use SOAP API, your org must use Enterprise Edition, Performance Edition, Unlimited Edition, or Developer Edition. If youâ€™re an existing Salesforce customer and want to upgrade to Enterprise, Unlimited, or Performance Edition, contact your account representative."
 HubSpot,CRM,2026-09 API reference - HubSpot docs,https://developers.hubspot.com/docs/api-reference/latest/overview,"The 2026-09 APIs use a date-based versioning scheme (e.g., `/crm/2026-09/`) that follows the previous 2026-03 API version. All endpoints in this section follow the pattern:
 For example, to retrieve all contacts:
 
@@ -1515,7 +1515,7 @@ Similar to OAuth, to make a request using a private app access token, include th
 - SMTP tokens used for sending transactional emails."
 HubSpot,CRM,Legacy private apps - HubSpot docs,https://developers.hubspot.com/docs/apps/legacy-apps/private-apps/overview,"<!--THE END-->
 
-- Private app access tokens are implemented on top of OAuth, so you can also make authenticated calls with your access token using one of HubSpot’s client libraries. For example, if you’re using the Node.js client library, you can instantiate an OAuth client by passing in your app’s access token:
+- Private app access tokens are implemented on top of OAuth, so you can also make authenticated calls with your access token using one of HubSpotâ€™s client libraries. For example, if youâ€™re using the Node.js client library, you can instantiate an OAuth client by passing in your appâ€™s access token:
 
 <!--THE END--> [...] To start making API calls, navigate to the details page of your app.
 
@@ -1526,29 +1526,29 @@ HubSpot,CRM,Legacy private apps - HubSpot docs,https://developers.hubspot.com/do
 
 <!--THE END--> [...] ## View private app access token information
 
-To view information about a private app’s access token, such as the Hub ID and scopes associated with the token, make a`POST` request to `/oauth/v2/private-apps/get/access-token-info`. In the request body, include your access token:
+To view information about a private appâ€™s access token, such as the Hub ID and scopes associated with the token, make a`POST` request to `/oauth/v2/private-apps/get/access-token-info`. In the request body, include your access token:
 
 ## Rotate your access token
 
 If your access token is lost or otherwise compromised, you can rotate the token. A new access token will be created and the original access token will expire."
-HubSpot,CRM,Authentication overview - HubSpot docs,https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview,"which includes code you can run in a Docker instance with full OAuth support. Authentication configuration details for your app are available on the app details page in the developer overview of your HubSpot account. Once you’ve set up an OAuth backend, you can make API requests using the OAuth access token that corresponds to a user who installed your app. This access token is provided using the`Bearer` HTTP authorization header. For example, if you wanted to retrieve contacts for the account [...] for the account with an access token of `00000000-aaaa-xxx-yyyy-zzzzzzzzzzzz`, your request would resemble the following: `type` subproperty within the `auth` field of your app’s `app-hsmeta.json` config to `oauth`. You’ll also need to set the `distribution` property to `marketplace` or `private` based on how you plan to distribute your app: [...] ### Static auth
+HubSpot,CRM,Authentication overview - HubSpot docs,https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview,"which includes code you can run in a Docker instance with full OAuth support. Authentication configuration details for your app are available on the app details page in the developer overview of your HubSpot account. Once youâ€™ve set up an OAuth backend, you can make API requests using the OAuth access token that corresponds to a user who installed your app. This access token is provided using the`Bearer` HTTP authorization header. For example, if you wanted to retrieve contacts for the account [...] for the account with an access token of `00000000-aaaa-xxx-yyyy-zzzzzzzzzzzz`, your request would resemble the following: `type` subproperty within the `auth` field of your appâ€™s `app-hsmeta.json` config to `oauth`. Youâ€™ll also need to set the `distribution` property to `marketplace` or `private` based on how you plan to distribute your app: [...] ### Static auth
 
-If you want to limit distribution of your app to a single authorized account, you’ll use a static auth access token. This token can be found in your app settings. An example request is provided below using a placeholder static auth access token.`type` subproperty (within the `auth` field) in your app’s `app-hsmeta.json` config to `static`, and set the `distribution` field to `private`. Learn more in the app configuration guide.
+If you want to limit distribution of your app to a single authorized account, youâ€™ll use a static auth access token. This token can be found in your app settings. An example request is provided below using a placeholder static auth access token.`type` subproperty (within the `auth` field) in your appâ€™s `app-hsmeta.json` config to `static`, and set the `distribution` field to `private`. Learn more in the app configuration guide.
 
 ## Developer API keys"
-HubSpot,CRM,Integrate AI tools with the HubSpot MCP server - HubSpot docs,https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server?output=1,"Model Context Protocolstandard, this remote server acts as a bridge between AI systems and HubSpot’s APIs, allowing for intelligent automation and insights without requiring users to understand complex API structures. For developers, the remote HubSpot MCP server provides secure, granular access to HubSpot CRM data through AI agents and third-party applications, and allows teams to build custom workflows, automate reporting, and integrate HubSpot context into third-party applications. For [...] MCP Inspector, handle PKCE automatically. If you’re building a custom integration, ensure your OAuth implementation includes PKCE support. Learn more aboutOAuth 2.1 authorization in the MCP specification.
+HubSpot,CRM,Integrate AI tools with the HubSpot MCP server - HubSpot docs,https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server?output=1,"Model Context Protocolstandard, this remote server acts as a bridge between AI systems and HubSpotâ€™s APIs, allowing for intelligent automation and insights without requiring users to understand complex API structures. For developers, the remote HubSpot MCP server provides secure, granular access to HubSpot CRM data through AI agents and third-party applications, and allows teams to build custom workflows, automate reporting, and integrate HubSpot context into third-party applications. For [...] MCP Inspector, handle PKCE automatically. If youâ€™re building a custom integration, ensure your OAuth implementation includes PKCE support. Learn more aboutOAuth 2.1 authorization in the MCP specification.
 
 ## Supported data and permissions
 
 The following data is accessible via the remote MCP server.
 
 ### Read access"
-HubSpot,CRM,Integrate AI tools with the HubSpot MCP server - HubSpot docs,https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server#troubleshooting,"The HubSpot Model Context Protocol (MCP) server enables AI assistants and Large Language Models to securely interact with your HubSpot CRM data through natural conversation. By implementing the Model Context Protocol standard, this remote server acts as a bridge between AI systems and HubSpot’s APIs, allowing for intelligent automation and insights without requiring users to understand complex API structures. For developers, the remote HubSpot MCP server provides secure, granular access to [...] Some MCP clients, like the MCP Inspector, handle PKCE automatically. If you’re building a custom integration, ensure your OAuth implementation includes PKCE support. Learn more about OAuth 2.1 authorization in the MCP specification.
+HubSpot,CRM,Integrate AI tools with the HubSpot MCP server - HubSpot docs,https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server#troubleshooting,"The HubSpot Model Context Protocol (MCP) server enables AI assistants and Large Language Models to securely interact with your HubSpot CRM data through natural conversation. By implementing the Model Context Protocol standard, this remote server acts as a bridge between AI systems and HubSpotâ€™s APIs, allowing for intelligent automation and insights without requiring users to understand complex API structures. For developers, the remote HubSpot MCP server provides secure, granular access to [...] Some MCP clients, like the MCP Inspector, handle PKCE automatically. If youâ€™re building a custom integration, ensure your OAuth implementation includes PKCE support. Learn more about OAuth 2.1 authorization in the MCP specification.
 
 ## Supported data and permissions
 
 The following data is accessible via the remote MCP server."
-HubSpot,CRM,Integrate AI tools with the HubSpot MCP server - HubSpot docs,https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server#available-tools,"The HubSpot Model Context Protocol (MCP) server enables AI assistants and Large Language Models to securely interact with your HubSpot CRM data through natural conversation. By implementing the Model Context Protocol standard, this remote server acts as a bridge between AI systems and HubSpot’s APIs, allowing for intelligent automation and insights without requiring users to understand complex API structures. For developers, the remote HubSpot MCP server provides secure, granular access to [...] Some MCP clients, like the MCP Inspector, handle PKCE automatically. If you’re building a custom integration, ensure your OAuth implementation includes PKCE support. Learn more about OAuth 2.1 authorization in the MCP specification.
+HubSpot,CRM,Integrate AI tools with the HubSpot MCP server - HubSpot docs,https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server#available-tools,"The HubSpot Model Context Protocol (MCP) server enables AI assistants and Large Language Models to securely interact with your HubSpot CRM data through natural conversation. By implementing the Model Context Protocol standard, this remote server acts as a bridge between AI systems and HubSpotâ€™s APIs, allowing for intelligent automation and insights without requiring users to understand complex API structures. For developers, the remote HubSpot MCP server provides secure, granular access to [...] Some MCP clients, like the MCP Inspector, handle PKCE automatically. If youâ€™re building a custom integration, ensure your OAuth implementation includes PKCE support. Learn more about OAuth 2.1 authorization in the MCP specification.
 
 ## Supported data and permissions
 
@@ -1557,24 +1557,24 @@ HubSpot,CRM,What's Best for my HubSpot Integration? Choosing Private vs. Public 
 
 ## When to build HubSpot private apps
 
-Private apps can be used for custom integrations intended for use by a single HubSpot account. Keep in mind, though, that users will need to manually create a private app, set up the scopes, and then copy and paste the private token into your integration. [...] Both private app tokens and public app access tokens can be used in the HTTP Authorization request header when making API requests. Both types of apps also use the same OAuth scopes to set the access allowed for an app, which helps keep HubSpot accounts secure by only using the specific permissions your app needs to function. [...] Private apps are a good option for one-off scripts or single API calls. For example, you can use a private app to create a new custom object, or to import CRM records from a CSV file if you’re using a script. You can create a private app with the appropriate scopes, use the token to make your API request or authenticate the requests in your script, and then delete the private app when you're done. This way, the token is invalidated as soon as you're done using it."
+Private apps can be used for custom integrations intended for use by a single HubSpot account. Keep in mind, though, that users will need to manually create a private app, set up the scopes, and then copy and paste the private token into your integration. [...] Both private app tokens and public app access tokens can be used in the HTTP Authorization request header when making API requests. Both types of apps also use the same OAuth scopes to set the access allowed for an app, which helps keep HubSpot accounts secure by only using the specific permissions your app needs to function. [...] Private apps are a good option for one-off scripts or single API calls. For example, you can use a private app to create a new custom object, or to import CRM records from a CSV file if youâ€™re using a script. You can create a private app with the appropriate scopes, use the token to make your API request or authenticate the requests in your script, and then delete the private app when you're done. This way, the token is invalidated as soon as you're done using it."
 HubSpot,CRM,Manage apps in HubSpot - HubSpot docs,https://developers.hubspot.com/docs/apps/developer-platform/build-apps/manage-apps-in-hubspot,"Static token apps: can only be installed in 1 standard HubSpot account at a time, and up to 10 developer test accounts.
  Privately distributed OAuth apps: can be installed in up to 10 allowlisted accounts (not including developer test accounts).
  Marketplace OAuth app prior to listing: can be installed in up to 25 accounts (not including developer test accounts).
  Marketplace OAuth app after being listed: can be installed in unlimited accounts.
 
-### Permission requirements [...] After choosing an account, you’ll be presented with a list of scopes to authorize based on what you specified in the top-level app configuration file. You can also clear any of the checkboxes under Optional scopes for any permissions that you don’t want to grant to the app. After confirming app permissions, click Connect app.
+### Permission requirements [...] After choosing an account, youâ€™ll be presented with a list of scopes to authorize based on what you specified in the top-level app configuration file. You can also clear any of the checkboxes under Optional scopes for any permissions that you donâ€™t want to grant to the app. After confirming app permissions, click Connect app.
 
 Confirm installation of OAuth app with marketplace distribution"
-Dropbox,Storage,File Access | Dropbox API Documentation,https://developers.dropbox.com/dbx-file-access-guide,"You can list contents of a Dropbox folder with the /files/list\_folder endpoint, which accepts a folder’s `path` and returns the content of that folder in an `entries` array along with a `cursor` for retrieving additional results with /files/list\_folder/continue. Using the `recursive` argument will return content of subfolders, which simplifies traversal.
+Dropbox,Storage,File Access | Dropbox API Documentation,https://developers.dropbox.com/dbx-file-access-guide,"You can list contents of a Dropbox folder with the /files/list\_folder endpoint, which accepts a folderâ€™s `path` and returns the content of that folder in an `entries` array along with a `cursor` for retrieving additional results with /files/list\_folder/continue. Using the `recursive` argument will return content of subfolders, which simplifies traversal.
 
-In addition to a folder’s path (e.g. /Homework/math), the `path` parameter will also accept: [...] Go to the /files/list\_folder endpoint in the API Explorer
- Select ‘Get Token’ to populate a short-lived token
+In addition to a folderâ€™s path (e.g. /Homework/math), the `path` parameter will also accept: [...] Go to the /files/list\_folder endpoint in the API Explorer
+ Select â€˜Get Tokenâ€™ to populate a short-lived token
  Put in a path to a Dropbox folder that you know has nested folders inside it
- Set the `recursive` parameter to `true` and click ‘Submit Call’
-  + Examine the response. Where’s all the content information? It may be on the next page of results.
+ Set the `recursive` parameter to `true` and click â€˜Submit Callâ€™
+  + Examine the response. Whereâ€™s all the content information? It may be on the next page of results.
  Copy the `cursor` from your response
- Navigate to /files/list\_folder/continue in the API Explorer [...] Pulling large files into your app each time a user needs to preview their Dropbox content can consume a lot of bandwidth; slowing your app down and negatively impacting your user’s experience. Thankfully, the Dropbox API offers two endpoints to help retrieve content: /files/get\_thumbnail and /files/get\_preview."
+ Navigate to /files/list\_folder/continue in the API Explorer [...] Pulling large files into your app each time a user needs to preview their Dropbox content can consume a lot of bandwidth; slowing your app down and negatively impacting your userâ€™s experience. Thankfully, the Dropbox API offers two endpoints to help retrieve content: /files/get\_thumbnail and /files/get\_preview."
 Dropbox,Storage,Paper Migration | Dropbox API Documentation,https://developers.dropbox.com/paper-migration-guide,"| /paper/docs/users/add | /sharing/add\_file\_member |
 | /paper/docs/users/list | /sharing/list\_file\_members |
 | /paper/docs/users/list/continue | /sharing/list\_file\_members/continue |
@@ -1588,7 +1588,7 @@ Dropbox,Storage,Paper Migration | Dropbox API Documentation,https://developers.d
 | /paper/docs/sharing\_policy/set | /sharing/create\_shared\_link\_with\_settings | [...] | Paper API | Dropbox API |
  --- |
 | /paper/docs/download | /files/export |
-| /paper/docs/folder\_users/list | /files/get\_file\_metadata to fetch the doc’s containing folder, then use /sharing/list\_folder\_members to fetch the folder’s members. |
+| /paper/docs/folder\_users/list | /files/get\_file\_metadata to fetch the docâ€™s containing folder, then use /sharing/list\_folder\_members to fetch the folderâ€™s members. |
 | /paper/docs/folder\_users/list/continue | /sharing/list\_folder\_members/continue |
 | /paper/docs/get\_folder\_info | /files/get\_folder\_metadata |"
 Dropbox,Storage,Team Administration | Dropbox API Documentation,https://developers.dropbox.com/dbx-team-administration-guide,"In Dropbox Business, teams have a license limit. Adding members will consume a license, and removing will free it. To see available & consumed licenses, use the /team/get\_info endpoint. Note that active, invited and suspended users count as provisioned.
@@ -1604,42 +1604,42 @@ Legal Holds (/team/legal\_holds) [...] ### Creating Users
 When creating users you have some useful configurations available. The endpoint is /team/members/add. Use the `new_members` array to add multiple members at a time.
 
 For each new member you will use the `MemberAddArg` structure. The only mandatory field is `member_email`, but it is a best practice to define `member_given_name` and `member_surname`."
-Dropbox,Storage,OAuth | Dropbox API Documentation,https://developers.dropbox.com/fr-fr/oauth-guide,"If you’d like to quickly test out the Dropbox APIs using your own Dropbox account before implementing OAuth, you can generate an access token from your newly created app in the Developer Console. Open the app, go to the Settings tab, and click Generate access token in the OAuth 2 section.
+Dropbox,Storage,OAuth | Dropbox API Documentation,https://developers.dropbox.com/fr-fr/oauth-guide,"If youâ€™d like to quickly test out the Dropbox APIs using your own Dropbox account before implementing OAuth, you can generate an access token from your newly created app in the Developer Console. Open the app, go to the Settings tab, and click Generate access token in the OAuth 2 section.
 
 If your app uses team scopes and you are not a team admin, Generate access token is disabled.
 
 Generate access token button in OAuth 2 section of app settings [...] In the implicit grant flow:
 
- Your application constructs an authorization URL to dropbox.com for the user, with your application’s `client_id` and `response_type` and specifying the `response_type` of `token`
+ Your application constructs an authorization URL to dropbox.com for the user, with your applicationâ€™s `client_id` and `response_type` and specifying the `response_type` of `token`
  Once the user authenticates on Dropbox.com, they are redirected back to the specified URI with the access token in the URL fragment.
 
 Your authorization URL should look like:
 
-` [...] Dropbox uses OAuth 2.0, an open specification, to authorize access to a user’s data. Once completed by a user, the OAuth flow returns an access token to your app. This access token can be used by your app in subsequent API calls for that user. It should be passed with the `Authorization` HTTP header value of `Bearer`"
-Dropbox,Storage,OAuth | Dropbox API Documentation,https://developers.dropbox.com/nl-nl/oauth-guide,"If you’d like to quickly test out the Dropbox APIs using your own Dropbox account before implementing OAuth, you can generate an access token from your newly created app in the Developer Console. Open the app, go to the Settings tab, and click Generate access token in the OAuth 2 section.
+` [...] Dropbox uses OAuth 2.0, an open specification, to authorize access to a userâ€™s data. Once completed by a user, the OAuth flow returns an access token to your app. This access token can be used by your app in subsequent API calls for that user. It should be passed with the `Authorization` HTTP header value of `Bearer`"
+Dropbox,Storage,OAuth | Dropbox API Documentation,https://developers.dropbox.com/nl-nl/oauth-guide,"If youâ€™d like to quickly test out the Dropbox APIs using your own Dropbox account before implementing OAuth, you can generate an access token from your newly created app in the Developer Console. Open the app, go to the Settings tab, and click Generate access token in the OAuth 2 section.
 
 If your app uses team scopes and you are not a team admin, Generate access token is disabled.
 
 Generate access token button in OAuth 2 section of app settings [...] In the implicit grant flow:
 
- Your application constructs an authorization URL to dropbox.com for the user, with your application’s `client_id` and `response_type` and specifying the `response_type` of `token`
+ Your application constructs an authorization URL to dropbox.com for the user, with your applicationâ€™s `client_id` and `response_type` and specifying the `response_type` of `token`
  Once the user authenticates on Dropbox.com, they are redirected back to the specified URI with the access token in the URL fragment.
 
 Your authorization URL should look like:
 
-` [...] Dropbox uses OAuth 2.0, an open specification, to authorize access to a user’s data. Once completed by a user, the OAuth flow returns an access token to your app. This access token can be used by your app in subsequent API calls for that user. It should be passed with the `Authorization` HTTP header value of `Bearer`"
-Dropbox,Storage,OAuth | Dropbox API Documentation,https://developers.dropbox.com/ru-ru/oauth-guide,"If you’d like to quickly test out the Dropbox APIs using your own Dropbox account before implementing OAuth, you can generate an access token from your newly created app in the Developer Console. Open the app, go to the Settings tab, and click Generate access token in the OAuth 2 section.
+` [...] Dropbox uses OAuth 2.0, an open specification, to authorize access to a userâ€™s data. Once completed by a user, the OAuth flow returns an access token to your app. This access token can be used by your app in subsequent API calls for that user. It should be passed with the `Authorization` HTTP header value of `Bearer`"
+Dropbox,Storage,OAuth | Dropbox API Documentation,https://developers.dropbox.com/ru-ru/oauth-guide,"If youâ€™d like to quickly test out the Dropbox APIs using your own Dropbox account before implementing OAuth, you can generate an access token from your newly created app in the Developer Console. Open the app, go to the Settings tab, and click Generate access token in the OAuth 2 section.
 
 If your app uses team scopes and you are not a team admin, Generate access token is disabled.
 
 Generate access token button in OAuth 2 section of app settings [...] In the implicit grant flow:
 
- Your application constructs an authorization URL to dropbox.com for the user, with your application’s `client_id` and `response_type` and specifying the `response_type` of `token`
+ Your application constructs an authorization URL to dropbox.com for the user, with your applicationâ€™s `client_id` and `response_type` and specifying the `response_type` of `token`
  Once the user authenticates on Dropbox.com, they are redirected back to the specified URI with the access token in the URL fragment.
 
 Your authorization URL should look like:
 
-` [...] Dropbox uses OAuth 2.0, an open specification, to authorize access to a user’s data. Once completed by a user, the OAuth flow returns an access token to your app. This access token can be used by your app in subsequent API calls for that user. It should be passed with the `Authorization` HTTP header value of `Bearer`"
+` [...] Dropbox uses OAuth 2.0, an open specification, to authorize access to a userâ€™s data. Once completed by a user, the OAuth flow returns an access token to your app. This access token can be used by your app in subsequent API calls for that user. It should be passed with the `Authorization` HTTP header value of `Bearer`"
 Dropbox,Storage,OAuth | Dropbox API Documentation,https://developers.dropbox.com/oauth-guide,"For AI agents: a documentation index is available at the root level at /llms.txt. Append /llms.txt to any URL for a page-level index, or .md for the markdown version of any page.
 
 LogoLogo
@@ -1656,28 +1656,28 @@ Guides
 
 This page is for Dropbox API.
 
-## Overview [...] Keep in mind that this is only for your own account - you’ll need to use the standard OAuth flow to obtain access tokens for other users.
+## Overview [...] Keep in mind that this is only for your own account - youâ€™ll need to use the standard OAuth flow to obtain access tokens for other users.
 
 Do not instruct your users to register their own Dropbox application to use your app - you just need to register your app once. Your end-users will connect to that app via the OAuth flow.
 
 ### SDK Support"
-Dropbox,Storage,OAuth | Dropbox API Documentation,https://developers.dropbox.com/oauth-guide#content-access,"Before you can get started, you’ll need to register your app with Dropbox by creating a new app in the Developer Console. That page will guide you through the process of registering your app, selecting permissions, and obtaining an app key and secret (a.k.a. `client_id` and `client_secret`) and inputting redirect URIs.
+Dropbox,Storage,OAuth | Dropbox API Documentation,https://developers.dropbox.com/oauth-guide#content-access,"Before you can get started, youâ€™ll need to register your app with Dropbox by creating a new app in the Developer Console. That page will guide you through the process of registering your app, selecting permissions, and obtaining an app key and secret (a.k.a. `client_id` and `client_secret`) and inputting redirect URIs.
 
-### Testing with a generated token [...] Keep in mind that this is only for your own account - you’ll need to use the standard OAuth flow to obtain access tokens for other users.
-
-Do not instruct your users to register their own Dropbox application to use your app - you just need to register your app once. Your end-users will connect to that app via the OAuth flow.
-
-### SDK Support"
-Dropbox,Storage,OAuth | Dropbox API Documentation,https://developers.dropbox.com/de-de/oauth-guide,"Before you can get started, you’ll need to register your app with Dropbox by creating a new app in the Developer Console. That page will guide you through the process of registering your app, selecting permissions, and obtaining an app key and secret (a.k.a. `client_id` and `client_secret`) and inputting redirect URIs.
-
-### Testing with a generated token [...] Keep in mind that this is only for your own account - you’ll need to use the standard OAuth flow to obtain access tokens for other users.
+### Testing with a generated token [...] Keep in mind that this is only for your own account - youâ€™ll need to use the standard OAuth flow to obtain access tokens for other users.
 
 Do not instruct your users to register their own Dropbox application to use your app - you just need to register your app once. Your end-users will connect to that app via the OAuth flow.
 
 ### SDK Support"
-Dropbox,Storage,OAuth | Dropbox API Documentation,https://developers.dropbox.com/pl-pl/oauth-guide,"Before you can get started, you’ll need to register your app with Dropbox by creating a new app in the Developer Console. That page will guide you through the process of registering your app, selecting permissions, and obtaining an app key and secret (a.k.a. `client_id` and `client_secret`) and inputting redirect URIs.
+Dropbox,Storage,OAuth | Dropbox API Documentation,https://developers.dropbox.com/de-de/oauth-guide,"Before you can get started, youâ€™ll need to register your app with Dropbox by creating a new app in the Developer Console. That page will guide you through the process of registering your app, selecting permissions, and obtaining an app key and secret (a.k.a. `client_id` and `client_secret`) and inputting redirect URIs.
 
-### Testing with a generated token [...] Keep in mind that this is only for your own account - you’ll need to use the standard OAuth flow to obtain access tokens for other users.
+### Testing with a generated token [...] Keep in mind that this is only for your own account - youâ€™ll need to use the standard OAuth flow to obtain access tokens for other users.
+
+Do not instruct your users to register their own Dropbox application to use your app - you just need to register your app once. Your end-users will connect to that app via the OAuth flow.
+
+### SDK Support"
+Dropbox,Storage,OAuth | Dropbox API Documentation,https://developers.dropbox.com/pl-pl/oauth-guide,"Before you can get started, youâ€™ll need to register your app with Dropbox by creating a new app in the Developer Console. That page will guide you through the process of registering your app, selecting permissions, and obtaining an app key and secret (a.k.a. `client_id` and `client_secret`) and inputting redirect URIs.
+
+### Testing with a generated token [...] Keep in mind that this is only for your own account - youâ€™ll need to use the standard OAuth flow to obtain access tokens for other users.
 
 Do not instruct your users to register their own Dropbox application to use your app - you just need to register your app once. Your end-users will connect to that app via the OAuth flow.
 
@@ -1753,7 +1753,7 @@ Methods
  `create` `POST /drive/v3/files/{fileId}/comments`
 
 Creates a comment on a file."
-Google Drive,Storage,REST Resource: files  |  Google Drive  |  Google for Developers,https://developers.google.com/workspace/drive/api/reference/rest/v3/files,"| Methods |
+Google Drive,Storage,REST Resource: files Â |Â  Google Drive Â |Â  Google for Developers,https://developers.google.com/workspace/drive/api/reference/rest/v3/files,"| Methods |
 | `copy` | Creates a copy of a file and applies any requested updates with patch semantics. |
 | `create` | Creates a file. |
 | `delete` | Permanently deletes a file owned by the user without moving it to the trash. |
@@ -1802,9 +1802,9 @@ A call to the `drive.files` endpoint (the Drive Files API) using the `Authorizat
 GET /drive/v2/files HTTP/1.1
 Host: www.googleapis.com
 Authorization: Bearer access_token
-``` [...] 5. In the OAuth scopes (comma-delimited) field, enter the list of scopes that your application should be granted access to. For example, if your application needs domain-wide full access to the Google Drive API and the Google Calendar API, enter: ` 
+``` [...] 5. In the OAuth scopes (comma-delimited) field, enter the list of scopes that your application should be granted access to. For example, if your application needs domain-wide full access to the Google Drive API and the Google Calendar API, enter: `
 6. Click Authorize."
-Google Drive,Storage,Using OAuth 2.0 for Web Server Applications  |  Authorization  |  Google for Developers,https://developers.google.com/identity/protocols/oauth2/web-server,"You can try out all the Google APIs and view their scopes at the OAuth 2.0 Playground.
+Google Drive,Storage,Using OAuth 2.0 for Web Server Applications Â |Â  Authorization Â |Â  Google for Developers,https://developers.google.com/identity/protocols/oauth2/web-server,"You can try out all the Google APIs and view their scopes at the OAuth 2.0 Playground.
 
 #### HTTP GET examples
 
@@ -1852,7 +1852,7 @@ An example URL is shown below, with line breaks and spaces for readability.
 ```
 
 After you create the request URL, redirect the user to it."
-Google Drive,Storage,MCP Reference: drivemcp.googleapis.com  |  Google Drive  |  Google for Developers,https://developers.google.com/workspace/drive/api/reference/mcp,"### Toolsets
+Google Drive,Storage,MCP Reference: drivemcp.googleapis.com Â |Â  Google Drive Â |Â  Google for Developers,https://developers.google.com/workspace/drive/api/reference/mcp,"### Toolsets
 
 The drivemcp.googleapis.com MCP server has the following toolsets:
 
@@ -1862,7 +1862,7 @@ The drivemcp.googleapis.com MCP server has the following toolsets:
 
 ### Get MCP tool specifications [...] The Drive MCP API MCP server offers the following MCP toolset endpoints:
 
- 
+
 
 ## MCP Tools
 
@@ -1877,20 +1877,20 @@ Google Drive,Storage,Configure the Google Drive MCP server | Google for Develope
 - Server URL: `
 - Transport: Streamable HTTP
 - Authentication: The Drive remote MCP server uses OAuth 2.0. When creating your OAuth 2.0 client, select Use this client for an AI-powered agent. For single-user personal setups, you can create a web, desktop, Android, or iOS client using Quick setup for personal use. For details, see Learn about authentication and authorization.
-  
+
   To avoid hourly sign-in prompts with a [...] 5. Select
-      
+
       Use this client for an AI-powered agent.
    6. Click
-      
+
       Create and copy your Client ID and Client Secret.
 2. Open or create the configuration file
-   
+
    `~/.gemini/config/mcp_config.json`.
 3. Add the
-   
+
    `mcpServers` configuration to `mcp_config.json`:`{ ""mcpServers"":{ ""drive"":{ ""serverUrl"":"" ""oauth"":{ ""clientId"":""OAUTH_CLIENT_ID"", ""clientSecret"":""OAUTH_CLIENT_SECRET"" } } } }`
-   
+
    Replace the following: [...] To enable the MCP components for Drive, enable the following service in your Google Cloud project:
 
 - Drive MCP API
@@ -1908,7 +1908,7 @@ Enable the MCP services in the Google Cloud console:
 ### Set up the OAuth consent screen
 
 Skip this step if you used Quick setup for personal use."
-Google Drive,Storage,Drive MCP file eligibility  |  Google Drive  |  Google for Developers,https://developers.google.com/workspace/drive/api/guides/drive-mcp-server-file-eligibility,"For AI agents and applications using the Google Drive MCP server, files must
+Google Drive,Storage,Drive MCP file eligibility Â |Â  Google Drive Â |Â  Google for Developers,https://developers.google.com/workspace/drive/api/guides/drive-mcp-server-file-eligibility,"For AI agents and applications using the Google Drive MCP server, files must
 pass a series of security, policy, and capability checks. The MCP server
 evaluates Google Workspace Data Loss Prevention (DLP) rules, but
 only policies that enforce
@@ -1963,7 +1963,7 @@ Once payment has been accepted you will receive an email confirmation, which com
 #### I would like to cancel my Device Access registration
 
 The US$5 registration fee is non-refundable."
-Google Drive,Storage,Device Access Registration  |  Google for Developers,https://developers.google.com/nest/device-access/registration,"Before creating your first project, you must register for Device Access. Registration consists of the acceptance of the Google API and Device Access Sandbox Terms of Service, along with a one-time, non-refundable fee (US$5) per account.
+Google Drive,Storage,Device Access Registration Â |Â  Google for Developers,https://developers.google.com/nest/device-access/registration,"Before creating your first project, you must register for Device Access. Registration consists of the acceptance of the Google API and Device Access Sandbox Terms of Service, along with a one-time, non-refundable fee (US$5) per account.
 
 You will not be able to create a project until you have accepted both Terms of Service and paid the registration fee. This applies to all users, both individual users and those looking to create a commercial offering. [...] Device Access requires registration, including accepting Google API and Device Access Sandbox Terms of Service, along with a non-refundable US$5 fee per account.
  Registration must be completed with a consumer Google Account (e.g., gmail.com) and the associated account cannot be changed later.

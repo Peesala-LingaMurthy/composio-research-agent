@@ -1,21 +1,41 @@
-app_name,field,automated_prediction,manual_label,comparison
-HubSpot,API Availability,yes,yes,MATCH
-HubSpot,MCP Availability,documented,documented,MATCH
-Slack,MCP Availability,documented,documented,MATCH
-Gmail,MCP Availability,documented,documented,MATCH
-Google Calendar,MCP Availability,documented,documented,MATCH
-Notion,MCP Availability,documented,documented,MATCH
-GitHub,MCP Availability,documented,documented,MATCH
-Jira,MCP Availability,documented,documented,MATCH
-Salesforce,MCP Availability,documented,documented,MATCH
-Dropbox,MCP Availability,unknown,unknown,MATCH
-Google Drive,MCP Availability,documented,documented,MATCH
-Slack,API Availability,yes,yes,MATCH
-Gmail,API Availability,yes,yes,MATCH
-Google Calendar,API Availability,yes,yes,MATCH
-Notion,API Availability,yes,yes,MATCH
-GitHub,API Availability,yes,yes,MATCH
-Jira,API Availability,yes,yes,MATCH
-Salesforce,API Availability,yes,yes,MATCH
-Dropbox,API Availability,yes,yes,MATCH
-Google Drive,API Availability,yes,yes,MATCH
+app_name,field,automated_prediction,automated_raw_result,manual_label,verification_status,comparison
+HubSpot,API Availability,yes,API documentation evidence found,Yes,verified,MATCH
+HubSpot,Authentication,oauth; private app access token,"OAuth 2.0 - verify exact flow, Private App Access Tokens",OAuth 2.0; Private App Access Tokens,verified,MATCH
+HubSpot,MCP Availability,documented,Provider MCP documentation found - verify server setup and functionality,Yes,documentation reviewed,NOT SCORED - VERIFICATION INCOMPLETE
+HubSpot,Access Type,not scored,Self-serve - developer account,Review,partially verified,NOT SCORED - ACCESS TYPE NEEDS MANUAL CLASSIFICATION
+Slack,MCP Availability,documented,Provider MCP documentation found - verify server setup and functionality,Yes,verified,MATCH
+Slack,API Availability,yes,API documentation evidence found,Yes,verified,MATCH
+Slack,Authentication,oauth,OAuth 2.0,OAuth 2.0,verified,MATCH
+Slack,Access Type,not scored,Unknown - No strong access evidence found,Review,verified,NOT SCORED - ACCESS TYPE NEEDS MANUAL CLASSIFICATION
+Gmail,MCP Availability,documented,Provider MCP documentation found - verify server setup and functionality,Yes,documentation reviewed,NOT SCORED - VERIFICATION INCOMPLETE
+Gmail,API Availability,yes,API documentation evidence found,Yes,verified,MATCH
+Gmail,Authentication,oauth,OAuth 2.0 - verify exact flow,OAuth 2.0,verified,MATCH
+Gmail,Access Type,not scored,Unknown - No strong access evidence found,Review,verified,NOT SCORED - ACCESS TYPE NEEDS MANUAL CLASSIFICATION
+Google Calendar,MCP Availability,documented,Provider MCP documentation found - verify server setup and functionality,Yes,documentation reviewed,NOT SCORED - VERIFICATION INCOMPLETE
+Google Calendar,API Availability,yes,API documentation evidence found,Yes,verified,MATCH
+Google Calendar,Authentication,oauth,OAuth 2.0 - verify exact flow,OAuth 2.0,verified,MATCH
+Google Calendar,Access Type,not scored,Unknown - No strong access evidence found,Review,partially verified,NOT SCORED - ACCESS TYPE NEEDS MANUAL CLASSIFICATION
+Notion,MCP Availability,documented,Provider MCP documentation found - verify server setup and functionality,Yes,verified,MATCH
+Notion,API Availability,yes,API documentation evidence found,Yes,verified,MATCH
+Notion,Authentication,internal connection token; oauth; personal access token,"OAuth 2.0, Personal Access Tokens, Internal Connection Tokens, Basic Auth for OAuth token exchange only",OAuth 2.0; Personal Access Tokens; Internal Connection Tokens,verified,MATCH
+Notion,Access Type,not scored,Self-serve - developer portal,Review,partially verified,NOT SCORED - ACCESS TYPE NEEDS MANUAL CLASSIFICATION
+GitHub,MCP Availability,documented,Provider MCP documentation found - verify server setup and functionality,Yes,verified,MATCH
+GitHub,API Availability,yes,API documentation evidence found,Yes,verified,MATCH
+GitHub,Authentication,github app; oauth; personal access token,"OAuth Apps, GitHub Apps, Personal Access Tokens",OAuth Apps; GitHub Apps; Personal Access Tokens,verified,MATCH
+GitHub,Access Type,not scored,Unknown - No strong access evidence found,Review,partially verified,NOT SCORED - ACCESS TYPE NEEDS MANUAL CLASSIFICATION
+Jira,MCP Availability,documented,Provider MCP documentation found - verify server setup and functionality,Yes,verified,MATCH
+Jira,API Availability,yes,API documentation evidence found,Yes,verified,MATCH
+Jira,Authentication,api token; basic authentication; oauth,"OAuth 2.0 (3LO), API Token with Basic Authentication",OAuth 2.0 (3LO); API Token with Basic Authentication,partially verified,NOT SCORED - VERIFICATION INCOMPLETE
+Jira,Access Type,not scored,Unknown - No strong access evidence found,Review,partially verified,NOT SCORED - ACCESS TYPE NEEDS MANUAL CLASSIFICATION
+Salesforce,MCP Availability,documented,Provider MCP documentation found - verify server setup and functionality,Yes,verified,MATCH
+Salesforce,API Availability,yes,API documentation evidence found,Yes,verified,MATCH
+Salesforce,Authentication,oauth,OAuth 2.0 - verify exact flow,OAuth 2.0,verified,MATCH
+Salesforce,Access Type,not scored,Unknown - No strong access evidence found,Review,partially verified,NOT SCORED - ACCESS TYPE NEEDS MANUAL CLASSIFICATION
+Dropbox,MCP Availability,unknown,Needs manual verification - no MCP evidence found,Unknown; no evidence found in collected results,further research required,NOT SCORED - VERIFICATION INCOMPLETE
+Dropbox,API Availability,yes,API documentation evidence found,Yes,verified,MATCH
+Dropbox,Authentication,oauth,OAuth 2.0 - verify exact flow,OAuth 2.0,verified,MATCH
+Dropbox,Access Type,not scored,Unknown - No strong access evidence found,Review,partially verified,NOT SCORED - ACCESS TYPE NEEDS MANUAL CLASSIFICATION
+Google Drive,MCP Availability,documented,Provider MCP documentation found - verify server setup and functionality,Yes,documentation reviewed,NOT SCORED - VERIFICATION INCOMPLETE
+Google Drive,API Availability,yes,API documentation evidence found,Yes,verified,MATCH
+Google Drive,Authentication,oauth,OAuth 2.0 - verify exact flow,OAuth 2.0,verified,MATCH
+Google Drive,Access Type,not scored,Unknown - No strong access evidence found,Review,partially verified,NOT SCORED - ACCESS TYPE NEEDS MANUAL CLASSIFICATION
